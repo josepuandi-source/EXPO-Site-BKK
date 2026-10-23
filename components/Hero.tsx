@@ -52,8 +52,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <Image src="/images/logo/uandi-logo-white.png" alt="U&I Global Australia" width={1508} height={330} priority className="h-auto w-44 md:w-56" />
-          <ExpoLogo alt={hero.logo.alt} strap={hero.strap} className="mt-4 w-[min(100%,440px)] md:w-[460px]" />
+          <ExpoLogo alt={hero.logo.alt} strap={hero.strap} className="w-[min(100%,440px)] md:w-[460px]" />
 
           <div className="mt-6 flex flex-col gap-2 drop-shadow-[0_2px_6px_rgba(0,40,80,.25)]">
             <p className="flex flex-wrap items-baseline justify-center gap-x-2.5 lg:justify-start">
