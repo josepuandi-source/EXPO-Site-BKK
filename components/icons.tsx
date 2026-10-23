@@ -107,3 +107,46 @@ export const PartnerIcons = {
     />
   ),
 };
+
+/** Flag of Thailand (2:3). */
+export const FlagTH = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 9 6" className={className} aria-hidden="true">
+    <rect width="9" height="6" fill="#A51931" />
+    <rect y="1" width="9" height="4" fill="#F4F5F8" />
+    <rect y="2" width="9" height="2" fill="#2D2A4A" />
+  </svg>
+);
+
+/** Flag of the Philippines (1:2), simplified for small sizes. */
+export const FlagPH = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 180 90" className={className} aria-hidden="true">
+    <rect width="180" height="45" fill="#0038A8" />
+    <rect y="45" width="180" height="45" fill="#CE1126" />
+    <path d="M0 0 L77.94 45 L0 90 Z" fill="#FFFFFF" />
+    <circle cx="27" cy="45" r="10" fill="#FCD116" />
+    <circle cx="9" cy="11" r="4" fill="#FCD116" />
+    <circle cx="9" cy="79" r="4" fill="#FCD116" />
+    <circle cx="64" cy="45" r="4" fill="#FCD116" />
+  </svg>
+);
+
+/** Flag of Australia (1:2), simplified for small sizes. */
+export const FlagAU = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 60 30" className={className} aria-hidden="true">
+    <rect width="60" height="30" fill="#012169" />
+    {/* Union Jack canton */}
+    <path d="M0 0 L30 15 M30 0 L0 15" stroke="#FFFFFF" strokeWidth="3" />
+    <path d="M0 0 L30 15 M30 0 L0 15" stroke="#C8102E" strokeWidth="1.2" />
+    <path d="M15 0 V15 M0 7.5 H30" stroke="#FFFFFF" strokeWidth="5" />
+    <path d="M15 0 V15 M0 7.5 H30" stroke="#C8102E" strokeWidth="3" />
+    <rect x="30" y="0" width="30" height="15" fill="#012169" />
+    <rect x="0" y="15" width="30" height="15" fill="#012169" />
+    {/* Commonwealth Star and Southern Cross */}
+    <circle cx="15" cy="23" r="3" fill="#FFFFFF" />
+    <circle cx="45" cy="6" r="1.6" fill="#FFFFFF" />
+    <circle cx="39" cy="13" r="1.6" fill="#FFFFFF" />
+    <circle cx="51" cy="11.5" r="1.6" fill="#FFFFFF" />
+    <circle cx="45" cy="25" r="1.8" fill="#FFFFFF" />
+    <circle cx="48" cy="16.5" r="1" fill="#FFFFFF" />
+  </svg>
+);

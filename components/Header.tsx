@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useContent } from "./ContentProvider";
 import { tel } from "@/content/site";
 import { Container } from "./ui";
-import { MenuIcon, CloseIcon, PhoneIcon, MailIcon } from "./icons";
+import { MenuIcon, CloseIcon, PhoneIcon, MailIcon, FlagTH, FlagPH, FlagAU } from "./icons";
 
 /** Official white U&I Global Australia logo for the teal bar. */
 function Wordmark({ small = false }: { small?: boolean }) {
@@ -19,6 +19,33 @@ function Wordmark({ small = false }: { small?: boolean }) {
       priority
       className={small ? "h-7 w-auto" : "h-9 w-auto md:h-10"}
     />
+  );
+}
+
+/** Flag links to the other EXPO 2026 websites (top bar and mobile menu). */
+function SisterSites({ onDark = true }: { onDark?: boolean }) {
+  const { sisterSites } = useContent();
+  const FLAGS = { th: FlagTH, ph: FlagPH, au: FlagAU };
+  return (
+    <nav aria-label="EXPO 2026 websites" className="flex flex-wrap items-center gap-1">
+      {sisterSites.map((s) => {
+        const Flag = FLAGS[s.flag];
+        return (
+          <a
+            key={s.href}
+            href={s.href}
+            lang={s.lang}
+            title={s.title}
+            className={`inline-flex items-center gap-1.5 rounded-md px-2 py-1 font-medium transition-colors ${
+              onDark ? "text-[#D8D4CC] hover:bg-white/10 hover:text-white" : "text-white/90 hover:bg-white/15 hover:text-white"
+            }`}
+          >
+            <Flag className="h-3.5 w-auto rounded-[2px] shadow-[0_0_0_1px_rgba(255,255,255,.25)]" />
+            {s.label}
+          </a>
+        );
+      })}
+    </nav>
   );
 }
 
@@ -41,6 +68,7 @@ export default function Header() {
                 {footer.contact.email}
               </a>
             </div>
+            <SisterSites />
           </div>
         </Container>
       </div>
@@ -112,6 +140,9 @@ export default function Header() {
           ))}
         </nav>
         <div className="border-t border-white/20 p-4 text-sm">
+          <div className="mb-4">
+            <SisterSites onDark={false} />
+          </div>
           <a
             href={nav.cta.href}
             onClick={() => setOpen(false)}

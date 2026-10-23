@@ -490,6 +490,14 @@ export const footer = {
 export const tel = (p: string) => "tel:" + p.replace(/[^+\d]/g, "");
 
 // ---------------------------------------------------------------------------
+// Sister sites — flag links in the top bar to the other EXPO 2026 websites
+// ---------------------------------------------------------------------------
+export const sisterSites = [
+  { flag: "au", label: "English", title: "EXPO 2026 main website (English)", href: "https://expo26-site-2.vercel.app", lang: "en" },
+  { flag: "ph", label: "Davao", title: "EXPO 2026 Davao website", href: "https://expo26-site-davao.vercel.app", lang: "en" },
+] as { flag: "th" | "ph" | "au"; label: string; title: string; href: string; lang: string }[];
+
+// ---------------------------------------------------------------------------
 // Small interface labels used across components
 // ---------------------------------------------------------------------------
 export const ui = {

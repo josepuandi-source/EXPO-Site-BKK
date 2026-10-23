@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useContent } from "./ContentProvider";
 import ExpoLogo from "./ExpoLogo";
 import { CalendarIcon, PinIcon } from "./icons";
+import Clouds from "./Clouds";
 
 const ART = "/images/bkk";
 
@@ -32,6 +33,7 @@ export default function Hero() {
         <div className="absolute left-[30%] top-[55%] h-32 w-[22rem] rounded-full bg-white/20 blur-3xl" />
         <div className="absolute -right-20 top-[48%] h-44 w-[26rem] rounded-full bg-white/20 blur-3xl" />
       </div>
+      <Clouds />
 
       {/* Waving Australian flag across the top */}
       <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 w-[78%] max-w-[1000px] sm:w-[62%]" style={flagMask}>

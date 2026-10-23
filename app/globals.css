@@ -67,3 +67,26 @@ html:lang(ko) {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* Hero: soft clouds drifting across the sky (motion-reduced visitors see them still). */
+@keyframes cloud-drift {
+  from {
+    transform: translateX(-45vw);
+  }
+  to {
+    transform: translateX(110vw);
+  }
+}
+.cloud {
+  position: absolute;
+  left: 0;
+  will-change: transform;
+  animation: cloud-drift var(--cloud-duration, 90s) linear infinite;
+  animation-delay: var(--cloud-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    animation: none !important;
+    transform: translateX(var(--cloud-rest, 20vw));
+  }
+}
