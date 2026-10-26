@@ -5,12 +5,12 @@ import { useContent } from "./ContentProvider";
 import { Container, Reveal } from "./ui";
 
 const ICON_SIZE: Record<string, [number, number]> = {
-  cap: [164, 119],
-  ielts: [127, 142],
-  van: [185, 110],
-  ticket: [190, 120],
-  visa: [134, 136],
-  koala: [170, 133],
+  cap: [633, 400],
+  ielts: [397, 400],
+  van: [646, 400],
+  ticket: [619, 400],
+  visa: [397, 400],
+  koala: [526, 400],
 };
 
 /** The Bangkok poster's "register early" specials: green pill headline and six tabbed cards with 3D icons. */
@@ -37,7 +37,7 @@ export default function Specials() {
                   <div aria-hidden="true" className="absolute -top-2.5 inset-x-0 h-12 rounded-t-[26px] bg-primary-700" />
                   <div className="relative flex h-full min-h-[170px] flex-col items-center justify-center rounded-[26px] bg-white px-6 pb-6 pt-14 text-center shadow-[0_10px_24px_rgba(13,31,58,.14)]">
                     <Image
-                      src={`/images/bkk/icon-${it.icon}.png`}
+                      src={`/images/bkk/icon-${it.icon}.webp`}
                       alt=""
                       width={w}
                       height={h}
@@ -67,8 +67,6 @@ export default function Specials() {
         <div className="mt-8 flex justify-center">
           <a
             href={hero.primaryCta.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex min-h-12 items-center rounded-2xl bg-accent-500 px-8 font-heading text-lg font-bold text-navy-900 shadow-[0_8px_20px_rgba(13,31,58,.2)] transition-transform hover:-translate-y-0.5 hover:bg-accent-600"
           >
             {specials.cta}

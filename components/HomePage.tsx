@@ -5,7 +5,6 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Dates from "./Dates";
 import WhyAttend from "./WhyAttend";
-import Pathways from "./Pathways";
 import Specials from "./Specials";
 import Videos from "./Videos";
 import About from "./About";
@@ -25,14 +24,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <Specials />
         <Dates />
         <WhyAttend />
-        <Pathways />
+        <FinalCta />
         <Videos />
         <About />
         <Partner />
         <Move />
         <Testimonials />
         <PhotoStrip />
-        <FinalCta />
         <Offices />
       </main>
       <Footer />

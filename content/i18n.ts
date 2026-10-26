@@ -16,8 +16,9 @@ export type Lang = (typeof locales)[number]["code"];
 /** Single-language site: every language link points home. */
 export const langHref = (_lang: Lang) => "/";
 
-/** Registration form for the main "Register" buttons. */
+/** Registration form, shown inline in the #register section (monday.com allows framing only via /forms/embed/). */
 const registerForm = site.forms.thai;
+const registerEmbed = registerForm.replace("/forms/", "/forms/embed/");
 
 /** Recursively swap every string that has a translation; everything else is kept. */
 function localize<T>(value: T, d: Record<string, string>): T {
@@ -34,7 +35,11 @@ export type Content = typeof english;
 
 export function getContent(_lang: Lang = SITE_LANG): Content {
   const c = localize(english, dict);
-  return { ...c, hero: { ...c.hero, primaryCta: { ...c.hero.primaryCta, href: registerForm } } };
+  return {
+    ...c,
+    hero: { ...c.hero, primaryCta: { ...c.hero.primaryCta, href: "#register" } },
+    finalCta: { ...c.finalCta, form: { ...c.finalCta.form, embed: registerEmbed, url: registerForm } },
+  };
 }
 
 export { tel };

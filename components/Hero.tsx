@@ -89,8 +89,6 @@ export default function Hero() {
           <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">
             <a
               href={hero.primaryCta.href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center rounded-2xl bg-accent-500 px-7 font-heading text-lg font-bold text-navy-900 shadow-[0_8px_20px_rgba(13,31,58,.25)] transition-transform hover:-translate-y-0.5 hover:bg-accent-600"
             >
               {hero.primaryCta.label}
@@ -111,7 +109,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
         >
-          <Image src={`${ART}/student.png`} alt="" width={551} height={900} priority sizes="(min-width: 1024px) 470px, 360px" className="h-auto w-full" />
+          <Image src={`${ART}/student.webp`} alt="" width={1100} height={1730} priority sizes="(min-width: 1024px) 470px, 360px" className="h-auto w-full" />
         </motion.div>
       </div>
     </section>

@@ -202,6 +202,8 @@ const th: Record<string, string> = {
   // Final CTA & offices
   "Secure Your Free Spot": "จองที่นั่งฟรีของคุณ",
   "Register in seconds. No cost, no obligation.": "ลงทะเบียนได้ในไม่กี่วินาที ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด",
+  "EXPO registration form": "แบบฟอร์มลงทะเบียนงานนิทรรศการ",
+  "Form not loading? Open it in a new tab": "แบบฟอร์มไม่แสดง? เปิดในแท็บใหม่",
   "Our Offices": "สำนักงานของเรา",
   "Get in touch with the U&I Global team in your region.": "ติดต่อทีมงาน U&I Global ในพื้นที่ของคุณ",
   "Brisbane (Head Office)": "บริสเบน (สำนักงานใหญ่)",

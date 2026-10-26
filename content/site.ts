@@ -45,18 +45,17 @@ export const nav = {
   ],
   mobile: [
     { label: "Why Attend", href: "#why-attend" },
-    { label: "Schedule", href: "#schedule" },
-    { label: "Pathways", href: "#pathways" },
-    { label: "Register", href: "#hero" },
+    { label: "Schedule", href: "#dates" },
+    { label: "Register", href: "#register" },
   ],
-  cta: { label: "Register for Free", href: "#hero" },
+  cta: { label: "Register for Free", href: "#register" },
 };
 
 // ---------------------------------------------------------------------------
 // Hero
 // ---------------------------------------------------------------------------
 export const hero = {
-  logo: { src: "/images/expo-logo/full.png", alt: "Australia Study Migration Expo 2026" },
+  logo: { src: "/images/expo-logo/full.webp", alt: "Australia Study Migration Expo 2026" },
   /** City skyline icons orbiting the logo. `tint` = "gold" | "white". */
   cities: [
     { src: "/cities/10.png", tint: "gold" },
@@ -218,7 +217,7 @@ export const pathways = {
         "Scholarship opportunities",
         "Pre-departure preparation",
       ],
-      cta: { label: "Get Started", href: "#hero" },
+      cta: { label: "Get Started", href: "#register" },
     },
     {
       variant: "navy",
@@ -232,7 +231,7 @@ export const pathways = {
         "Permanent residency pathways",
         "Migration policy updates",
       ],
-      cta: { label: "Get Started", href: "#hero" },
+      cta: { label: "Get Started", href: "#register" },
     },
   ] as {
     variant: "primary" | "navy";
@@ -251,7 +250,7 @@ export const pathways = {
 export const specials = {
   title: "Register early for exclusive expo-day benefits!",
   free: "FREE!",
-  /** icon: file in /images/bkk/icon-<name>.png. `free` adds the green "FREE!" mark. */
+  /** icon: file in /images/bkk/icon-<name>.webp. `free` adds the green "FREE!" mark. */
   items: [
     { icon: "cap", text: "Course application", free: true },
     { icon: "ielts", text: "IELTS/PTE mock test", free: true },
@@ -445,7 +444,9 @@ export const photoStrip = {
 export const finalCta = {
   title: "Secure Your Free Spot",
   subtitle: "Register in seconds. No cost, no obligation.",
-  cta: { label: "Register for Free", href: "#hero" },
+  cta: { label: "Register for Free", href: "#register" },
+  /** The monday.com form shown inline; filled in per site in content/i18n.ts. */
+  form: { embed: "", url: "", title: "EXPO registration form", fallback: "Form not loading? Open it in a new tab" },
 };
 
 // ---------------------------------------------------------------------------
@@ -476,9 +477,8 @@ export const footer = {
   trust: "Trusted by 5,000+ students worldwide",
   links: [
     { label: "Why Attend", href: "#why-attend" },
-    { label: "Schedule", href: "#schedule" },
-    { label: "Pathways", href: "#pathways" },
-    { label: "Register", href: "#hero" },
+    { label: "Schedule", href: "#dates" },
+    { label: "Register", href: "#register" },
   ],
   contact: {
     email: "information@uandiedu.com",

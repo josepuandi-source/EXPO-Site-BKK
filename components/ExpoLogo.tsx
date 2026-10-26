@@ -3,20 +3,22 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
-// The logo is split into four transparent layers, each the full 384×230 canvas,
+// The logo is split into transparent layers, each the full 1920×1150 canvas,
 // so they stack back into the exact artwork and can be animated separately.
+// Australia, EXP and the globe are high-res WebP; the STUDY • MIGRATION artwork is the older PNG.
 const SRC = "/images/expo-logo";
-const W = 384;
-const H = 230;
+const W = 1920;
+const H = 1150;
+const SIZES = "(min-width: 768px) 460px, 90vw";
 // Globe bounding box inside the canvas (px) — used for its spin origin and the shine.
-const GLOBE = { x: 260, y: 135, w: 87, h: 87 };
+const GLOBE = { x: 1320, y: 647, w: 448, h: 448 };
 const pct = (v: number, of: number) => `${(v / of) * 100}%`;
 const globeOrigin = `${pct(GLOBE.x + GLOBE.w / 2, W)} ${pct(GLOBE.y + GLOBE.h / 2, H)}`;
 
 const ease = [0.65, 0, 0.35, 1] as const;
 
 function Layer({ name }: { name: string }) {
-  return <Image src={`${SRC}/${name}.png`} alt="" width={W} height={H} priority className="absolute inset-0 h-full w-full" />;
+  return <Image src={`${SRC}/${name}.${name === "study" ? "png" : "webp"}`} alt="" width={W} height={H} sizes={SIZES} priority className="absolute inset-0 h-full w-full" />;
 }
 
 /**
@@ -38,7 +40,7 @@ export default function ExpoLogo({ alt, className = "", strap }: { alt: string; 
   );
 
   if (reduce) {
-    if (!strap) return <Image src={`${SRC}/full.png`} alt={alt} width={W} height={H} priority className={`h-auto ${className}`} />;
+    if (!strap) return <Image src={`${SRC}/full.webp`} alt={alt} width={W} height={H} sizes={SIZES} priority className={`h-auto ${className}`} />;
     return (
       <div role="img" aria-label={alt} className={`relative ${className}`} style={{ aspectRatio: `${W} / ${H}`, containerType: "inline-size" }}>
         {["australia", "exp", "globe"].map((n) => (

@@ -7,25 +7,35 @@ import { Container, Reveal, SectionHeader, Button, HighlightTitle } from "./ui";
 import { PhoneIcon, MailIcon, PinIcon, ArrowUpIcon } from "./icons";
 
 /** Photo band with a teal overlay, the U&I site's contact CTA. */
+/** Registration: the monday.com form embedded inline, over a recap photo. Every "Register" button scrolls here. */
 export function FinalCta() {
   const { finalCta, photoStrip } = useContent();
   const bg = photoStrip.photos[7]?.src ?? photoStrip.photos[0].src;
+  const { form } = finalCta;
   return (
-    <section className="relative overflow-hidden text-center text-white">
+    <section id="register" className="relative scroll-mt-20 overflow-hidden text-white">
       <Image src={bg} alt="" fill sizes="100vw" className="object-cover" />
-      <div aria-hidden="true" className="absolute inset-0 bg-primary-700/80" />
+      <div aria-hidden="true" className="absolute inset-0 bg-primary-700/85" />
       <Container className="relative z-10">
-        <Reveal>
-          <div className="flex flex-col items-center gap-3 py-24">
+        <div className="flex flex-col items-center py-16 text-center md:py-20">
+          <Reveal>
             <h2 className="font-heading text-[clamp(30px,4vw,42px)] font-semibold">
               <HighlightTitle text={finalCta.title} dark />
             </h2>
-            <p className="text-[17px] text-white/90">{finalCta.subtitle}</p>
-            <Button href={finalCta.cta.href} variant="white" size="lg" className="mt-3">
-              {finalCta.cta.label}
-            </Button>
+            <p className="mt-3 text-[17px] text-white/90">{finalCta.subtitle}</p>
+          </Reveal>
+          <div className="mt-8 w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-[0_20px_50px_rgba(0,40,30,.35)]">
+            <iframe
+              src={form.embed}
+              title={form.title}
+              loading="lazy"
+              className="block h-[1500px] w-full border-0 md:h-[1350px]"
+            />
           </div>
-        </Reveal>
+          <a href={form.url} target="_blank" rel="noopener noreferrer" className="mt-4 text-sm text-white/85 underline underline-offset-4 hover:text-white">
+            {form.fallback} ↗
+          </a>
+        </div>
       </Container>
     </section>
   );
