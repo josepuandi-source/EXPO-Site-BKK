@@ -6,6 +6,7 @@ import { useContent } from "./ContentProvider";
 import ExpoLogo from "./ExpoLogo";
 import { CalendarIcon, PinIcon } from "./icons";
 import Clouds from "./Clouds";
+import WavingFlag from "./WavingFlag";
 
 const ART = "/images/bkk";
 
@@ -37,7 +38,7 @@ export default function Hero() {
 
       {/* Waving Australian flag across the top */}
       <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 w-[78%] max-w-[1000px] sm:w-[62%]" style={flagMask}>
-        <Image src={`${ART}/flag.jpg`} alt="" width={1040} height={225} priority className="h-auto w-full" />
+        <WavingFlag src={`${ART}/flag.jpg`} width={1040} height={225} />
       </div>
 
       {/* Sydney Opera House and Harbour Bridge along the bottom */}

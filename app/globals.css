@@ -90,3 +90,32 @@ html:lang(ko) {
     transform: translateX(var(--cloud-rest, 20vw));
   }
 }
+
+/* Hero: Australian flag waving (strips bob out of phase; shade darkens in the troughs). */
+@keyframes flag-wave {
+  0%, 100% { transform: translateY(calc(var(--amp) * -1)); }
+  50% { transform: translateY(var(--amp)); }
+}
+@keyframes flag-shade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.16; }
+}
+.flag-strip {
+  will-change: transform;
+  animation: flag-wave var(--flag-duration, 3s) ease-in-out infinite;
+  animation-delay: var(--flag-delay, 0s);
+}
+.flag-shade {
+  position: absolute;
+  inset: 0;
+  background: #0d1f3a;
+  opacity: 0;
+  animation: flag-shade var(--flag-duration, 3s) ease-in-out infinite;
+  animation-delay: var(--flag-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flag-strip,
+  .flag-shade {
+    animation: none !important;
+  }
+}
