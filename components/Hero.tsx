@@ -60,11 +60,29 @@ export default function Hero() {
               <span className="font-heading text-2xl font-bold md:text-3xl">{d.date}</span>
               <span className="text-base md:text-lg">{d.time}</span>
             </p>
-            <p className="flex items-center justify-center gap-2.5 lg:justify-start">
-              <PinIcon className="h-6 w-6 shrink-0" />
-              <span className="font-heading text-xl font-bold md:text-2xl">{d.venue}</span>
-            </p>
-            <p className="text-sm text-white/90 md:pl-[34px]">{d.address}</p>
+            {/* Venue opens Google Maps; on hover/focus a live map preview pops up */}
+            <div className="group relative self-center lg:self-start">
+              <a href={d.mapUrl} target="_blank" rel="noopener noreferrer" aria-label={`${d.venue}, ${d.address} – ${d.mapLabel}`} className="block rounded-lg">
+                <span className="flex items-center justify-center gap-2.5 lg:justify-start">
+                  <PinIcon className="h-6 w-6 shrink-0" />
+                  <span className="font-heading text-xl font-bold underline decoration-white/40 decoration-2 underline-offset-4 transition-colors group-hover:decoration-accent-500 md:text-2xl">
+                    {d.venue}
+                  </span>
+                </span>
+                <span className="mt-2 block text-sm text-white/90 md:pl-[34px]">{d.address}</span>
+                <span className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-accent-500 md:pl-[34px]">
+                  {d.mapLabel} ↗
+                </span>
+              </a>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none invisible absolute left-1/2 top-full z-30 w-[340px] -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 [@media(hover:none)]:hidden lg:left-0 lg:translate-x-0"
+              >
+                <div className="overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_40px_rgba(13,31,58,.35)]">
+                  <iframe src={d.mapEmbed} title={d.venue} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="block h-[220px] w-full" tabIndex={-1} />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">

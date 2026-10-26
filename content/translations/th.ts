@@ -43,6 +43,7 @@ const th: Record<string, string> = {
   "Study • Migration": "เรียนต่อ • ย้ายถิ่นฐาน",
   "1:00–5:00 PM": "เวลา 13.00–17.00 น.",
   "392/44 Siam Square Soi 6, Pathum Wan, Bangkok 10330": "392/44 สยามสแควร์ ซอย 6 ปทุมวัน กรุงเทพฯ 10330",
+  "Open in Google Maps": "เปิดใน Google Maps",
   "Register early for exclusive expo-day benefits!": "ลงทะเบียนล่วงหน้า รับสิทธิพิเศษเฉพาะในงาน!",
   "FREE!": "ฟรี!",
   "Course application": "สมัครเรียน",
