@@ -198,7 +198,6 @@ const th: Record<string, string> = {
   // Testimonials
   "What Our Students Say": "เสียงจากนักเรียนของเรา",
   "Real stories from students who achieved their Australian dream.": "เรื่องจริงจากนักเรียนที่ทำความฝันในออสเตรเลียสำเร็จ",
-  "Real reviews from students U&I Thailand has helped.": "รีวิวจริงจากนักเรียนที่ไว้วางใจให้ U&I Thailand ดูแล",
   "Service": "บริการ",
   "Consultant": "ที่ปรึกษา",
   "Read more": "คลิกอ่านต่อ",
@@ -314,7 +313,6 @@ const th: Record<string, string> = {
   "Free advice and planning, no service fees at any step": "ปรึกษาและวางแผน ฟรีค่าบริการทุกขั้นตอน",
   // School specials
   "School specials & scholarships": "สิทธิพิเศษและทุนการศึกษาจากสถาบัน",
-  "Exclusive offers from our partner schools, only at the Bangkok EXPO. Tap a poster to see it in full.": "ข้อเสนอพิเศษจากสถาบันพันธมิตร เฉพาะในงาน EXPO กรุงเทพฯ เท่านั้น แตะที่โปสเตอร์เพื่อดูแบบเต็ม",
   "Specialist": "ผู้เชี่ยวชาญ",
   // Reviews tabs
   "Student reviews": "รีวิวนักเรียน",
@@ -353,6 +351,9 @@ const th: Record<string, string> = {
   "See more reviews": "ดูรีวิวเพิ่มเติม",
   "Show fewer reviews": "แสดงน้อยลง",
   "Close": "ปิด",
+  "Prepared especially for guests of the U&I Global EXPO Bangkok": "ที่เตรียมไว้สำหรับผู้เข้าร่วมงาน U&I Global EXPO กรุงเทพฯ โดยเฉพาะ",
+  "Tap a poster to see the full details": "แตะที่โปสเตอร์เพื่อดูรายละเอียดแบบเต็ม",
+  "Real reviews from students U&I has helped.": "รีวิวจริงจากนักเรียนที่ไว้วางใจให้ U&I ดูแล",
 };
 
 export default th;

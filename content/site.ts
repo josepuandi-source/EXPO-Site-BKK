@@ -344,9 +344,13 @@ export const specialists = {
 // ---------------------------------------------------------------------------
 export const schools = {
   title: "School specials & scholarships",
-  subtitle: "Exclusive offers from our partner schools, only at the Bangkok EXPO. Tap a poster to see it in full.",
+  /** Each line shows on its own line. */
+  subtitle: ["Prepared especially for guests of the U&I Global EXPO Bangkok", "Tap a poster to see the full details"],
   specialistLabel: "Specialist",
-  /** specialist: who to talk to about this school at the EXPO (matches a name in `specialists`) */
+  /**
+   * specialist: who to talk to about this school at the EXPO (matches a name in `specialists`).
+   * hideCaption: leave out the school/specialist line under that poster.
+   */
   items: [
     { school: "Griffith University", specialist: "P'Aew", poster: "/images/schools/aew-griffith.webp" },
     { school: "Kaplan Business School", specialist: "P'Aew", poster: "/images/schools/aew-kaplan.webp" },
@@ -359,7 +363,7 @@ export const schools = {
     { school: "TAFE Queensland", specialist: "P'Mookie", poster: "/images/schools/mookie-tafeqld.webp" },
     { school: "ECA College & APIC", specialist: "P'Titi", poster: "/images/schools/titi-eca-apic.webp" },
     { school: "Southern Cross University", specialist: "P'Titi", poster: "/images/schools/titi-scu.webp" },
-  ],
+  ] as { school: string; specialist: string; poster: string; hideCaption?: boolean }[],
 };
 
 // ---------------------------------------------------------------------------
@@ -458,7 +462,7 @@ export const move = {
 // ---------------------------------------------------------------------------
 export const testimonials = {
   title: "What Our Students Say",
-  subtitle: "Real reviews from students U&I Thailand has helped.",
+  subtitle: "Real reviews from students U&I has helped.",
   labels: { service: "Service", consultant: "Consultant", course: "Course", school: "School", readMore: "Read more", source: "Review", showMore: "See more reviews", showLess: "Show fewer reviews", close: "Close" },
   tabs: { reviews: "Student reviews", grants: "Visa grants", study: "Study experiences" },
   /** Visa grant posts from the U&I Thailand page, newest first. */

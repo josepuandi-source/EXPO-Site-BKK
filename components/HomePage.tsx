@@ -15,6 +15,7 @@ import Move from "./Move";
 import Testimonials from "./Testimonials";
 import PhotoStrip from "./PhotoStrip";
 import { FinalCta, Offices, Footer } from "./Closing";
+import ScrollControls from "./ScrollControls";
 
 // Section order — rearrange or comment out lines to change the page.
 export default function HomePage({ lang }: { lang: Lang }) {
@@ -39,6 +40,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <Offices />
       </main>
       <Footer />
+      <ScrollControls />
     </ContentProvider>
   );
 }
