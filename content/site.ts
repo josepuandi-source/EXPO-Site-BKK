@@ -669,7 +669,7 @@ export const offices = {
   title: "Our Offices",
   subtitle: "Get in touch with the U&I Global team in your region.",
   items: [
-    { name: "Bangkok (Thailand)", phone: "+66 81-116-5186", address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
+    { name: "Bangkok (Thailand)", phones: [{ number: "+66 81-116-5186", area: "Bangkok" }, { number: "+66 99-921-5899", area: "Chiang Mai" }], address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
     { name: "Brisbane (Head Office)", phone: "+61 7 3270 7999", email: "information@uandiedu.com", address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia" },
     { name: "Melbourne", phone: "+61 3 9639 6148", address: "Suite 202, Level 2, 517 Flinders Lane, Melbourne VIC 3000, Australia" },
     { name: "Gold Coast", phone: "+61 421 000 060", address: "Level 1, Southport Central Commercial Tower 2, 2106/5 Lawson St., Southport QLD 4215, Australia" },
@@ -679,7 +679,7 @@ export const offices = {
     { name: "Cebu (Philippines)", address: "Digitally integrated operational office managed by U&I staff" },
     { name: "Iloilo (Philippines)", address: "Digitally integrated operational office managed by U&I staff" },
     { name: "Manila (Philippines)", address: "Digitally integrated operational office managed by U&I staff" },
-  ] as { name: string; phone?: string; email?: string; address: string }[],
+  ] as { name: string; phone?: string; /** Several numbers, each labelled with its city. */ phones?: { number: string; area: string }[]; email?: string; address: string }[],
 };
 
 // ---------------------------------------------------------------------------

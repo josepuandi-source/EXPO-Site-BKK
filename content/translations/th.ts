@@ -229,7 +229,7 @@ const th: Record<string, string> = {
   "Brisbane (Head Office)": "บริสเบน (สำนักงานใหญ่)",
   "Seoul (Korea)": "โซล (เกาหลี)",
   "Busan (Korea)": "ปูซาน (เกาหลี)",
-  "Bangkok (Thailand)": "กรุงเทพฯ (ประเทศไทย)",
+  "Bangkok (Thailand)": "กรุงเทพ & เชียงใหม่ (ประเทศไทย)",
   "Davao (Philippines)": "ดาเวา (ฟิลิปปินส์)",
   "Cebu (Philippines)": "เซบู (ฟิลิปปินส์)",
   "Iloilo (Philippines)": "อิโลอิโล (ฟิลิปปินส์)",

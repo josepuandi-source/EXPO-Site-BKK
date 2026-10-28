@@ -59,6 +59,12 @@ export function Offices() {
                       {o.phone}
                     </a>
                   )}
+                  {o.phones?.map((p) => (
+                    <a key={p.number} href={tel(p.number)} className="flex items-center gap-2.5 hover:text-primary-700">
+                      <PhoneIcon className="h-4 w-4 shrink-0 text-primary-500" />
+                      {p.number} ({p.area})
+                    </a>
+                  ))}
                   {o.email && (
                     <a href={`mailto:${o.email}`} className="flex items-center gap-2.5 hover:text-primary-700">
                       <MailIcon className="h-4 w-4 shrink-0 text-primary-500" />
