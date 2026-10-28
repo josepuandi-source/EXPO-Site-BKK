@@ -5,7 +5,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { useContent } from "./ContentProvider";
 import { ArrowLeftIcon, CloseIcon } from "./icons";
 
-type Poster = { src: string; alt: string };
+type Poster = { src: string; alt: string; width?: number; height?: number };
 const Ctx = createContext<(p: Poster) => void>(() => {});
 
 /** Opens a poster over the page. */
@@ -101,8 +101,8 @@ export function PosterViewer({ children }: { children: ReactNode }) {
             <Image
               src={poster.src}
               alt={poster.alt}
-              width={1415}
-              height={2000}
+              width={poster.width ?? 1415}
+              height={poster.height ?? 2000}
               sizes="(min-width: 768px) 640px, 100vw"
               onClick={(e) => e.stopPropagation()}
               className="h-auto max-h-full w-auto max-w-full rounded-lg object-contain shadow-2xl"

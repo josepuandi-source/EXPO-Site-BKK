@@ -6,6 +6,8 @@ import Hero from "./Hero";
 import Dates from "./Dates";
 import WhyAttend from "./WhyAttend";
 import Specials from "./Specials";
+import Schools from "./Schools";
+import Specialists from "./Specialists";
 import Videos from "./Videos";
 import About from "./About";
 import Partner from "./Partner";
@@ -22,14 +24,16 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <main>
         <Hero />
         <Specials />
+        <Schools />
+        <Specialists />
+        <FinalCta />
         <Dates />
         <WhyAttend />
-        <FinalCta />
+        <Testimonials />
         <Videos />
         <About />
         <Partner />
         <Move />
-        <Testimonials />
         <PhotoStrip />
         <Offices />
       </main>

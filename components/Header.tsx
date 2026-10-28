@@ -58,11 +58,14 @@ export default function Header() {
       <div className="bg-navy-900 text-[13px] text-[#D8D4CC]">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-1 py-1.5">
-            <div className="flex items-center gap-5">
-              <a href={tel(footer.contact.phone)} className="flex items-center gap-1.5 hover:text-white">
-                <PhoneIcon className="h-3.5 w-3.5" />
-                {footer.contact.phone}
-              </a>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              {footer.contact.phones.map((p) => (
+                <a key={p.number} href={tel(p.number)} className="flex items-center gap-1.5 hover:text-white">
+                  <PhoneIcon className="h-3.5 w-3.5" />
+                  {p.number}
+                  <span className="hidden text-white/60 sm:inline">({p.area})</span>
+                </a>
+              ))}
               <a href={`mailto:${footer.contact.email}`} className="hidden md:flex items-center gap-1.5 hover:text-white">
                 <MailIcon className="h-3.5 w-3.5" />
                 {footer.contact.email}

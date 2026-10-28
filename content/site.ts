@@ -252,18 +252,87 @@ export const specials = {
   free: "FREE!",
   /** icon: file in /images/bkk/icon-<name>.webp. `free` adds the green "FREE!" mark. */
   items: [
-    { icon: "cap", text: "Course application", free: true },
-    { icon: "ielts", text: "IELTS/PTE mock test", free: true },
-    { icon: "van", text: "Airport pick-up", free: false },
-    { icon: "ticket", text: "Flight to Australia for Work & Holiday", free: false },
-    { icon: "visa", text: "Student visa fee support", free: false },
-    { icon: "koala", text: "Australian souvenir for the first 29 guests*", free: true },
+    { icon: "visa", text: "Student visa fee scholarship of up to $2,050", free: false },
+    { icon: "ticket", text: "20% off flights to Australia & New Zealand", free: false },
+    { icon: "van", text: "Airport pick-up", free: true },
+    { icon: "cap", text: "Course application, with no application or processing fees", free: true },
+    { icon: "ielts", text: "IELTS / PTE English level mock test", free: true },
+    { icon: "koala", text: "Australian souvenir for the first 29 guests!", free: true },
   ] as { icon: "cap" | "ielts" | "van" | "ticket" | "visa" | "koala"; text: string; free: boolean }[],
   notes: [
     "*Conditions as set by the company.",
     "*The first 29 guests to check in receive an Australian souvenir (celebrating 29 years of U&I Global).",
   ],
   cta: "Register free",
+};
+
+// ---------------------------------------------------------------------------
+// Specialists — the U&I team at the Bangkok EXPO (cut-outs from their specialist cards)
+// ---------------------------------------------------------------------------
+export const specialists = {
+  title: "Free consultation with our specialists",
+  subtitle: "Meet the U&I team who will look after you at the Bangkok EXPO.",
+  items: [
+    {
+      name: "P'Aew",
+      photo: "/images/specialists/aew.webp",
+      branch: "Consultant, Bangkok office",
+      points: ["Specialist in English-language study plans", "ILSC and Greystone alumna", "Check, be sure, then lodge your visa"],
+    },
+    {
+      name: "P'Fern",
+      photo: "/images/specialists/fern.webp",
+      branch: "Consultant, Bangkok office",
+      points: ["English study plans in Australia", "ILSC and Greenwich alumna", "Not sure how to find work or a place to live? Ask away!"],
+    },
+    {
+      name: "P'Mookie",
+      photo: "/images/specialists/mookie.webp",
+      branch: "Counsellor, Bangkok office",
+      points: ["Visa plans: Work & Holiday, work and visa extensions", "Degree study with scholarships of over 100%", "Summer courses in the school break, made easy"],
+    },
+    {
+      name: "P'Blue",
+      photo: "/images/specialists/blue.webp",
+      branch: "Consultant, Chiang Mai office",
+      points: ["Over 7 years of student counselling", "Study plans for Australia & New Zealand", "Full support from application to visa"],
+    },
+    {
+      name: "P'Inez",
+      photo: "/images/specialists/inez.webp",
+      branch: "Melbourne office",
+      points: ["Degree study plans", "Experienced with 485 visa applications", "RMIT alumna, a top 3 Melbourne university"],
+    },
+    {
+      name: "P'Titi",
+      photo: "/images/specialists/titi.webp",
+      branch: "Brisbane office",
+      points: ["Knows vocational and degree pathways", "Specialist in studying in Australia", "Free help planning your study and visa"],
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// School specials & scholarships — partner school posters in a moving carousel
+// ---------------------------------------------------------------------------
+export const schools = {
+  title: "School specials & scholarships",
+  subtitle: "Exclusive offers from our partner schools, only at the Bangkok EXPO. Tap a poster to see it in full.",
+  specialistLabel: "Specialist",
+  /** specialist: who to talk to about this school at the EXPO (matches a name in `specialists`) */
+  items: [
+    { school: "Griffith University", specialist: "P'Aew", poster: "/images/schools/aew-griffith.webp" },
+    { school: "Kaplan Business School", specialist: "P'Aew", poster: "/images/schools/aew-kaplan.webp" },
+    { school: "Greenwich College", specialist: "P'Blue", poster: "/images/schools/blue-greenwich.webp" },
+    { school: "Greystone College", specialist: "P'Blue", poster: "/images/schools/blue-greystone.webp" },
+    { school: "ILSC Language Schools", specialist: "P'Blue", poster: "/images/schools/blue-ilsc.webp" },
+    { school: "English Path (EP)", specialist: "P'Fern", poster: "/images/schools/fern-ep.webp" },
+    { school: "Langports", specialist: "P'Fern", poster: "/images/schools/fern-langports.webp" },
+    { school: "Alma Mater College Australia (AMCA)", specialist: "P'Mookie", poster: "/images/schools/mookie-amca.webp" },
+    { school: "TAFE Queensland", specialist: "P'Mookie", poster: "/images/schools/mookie-tafeqld.webp" },
+    { school: "ECA College & APIC", specialist: "P'Titi", poster: "/images/schools/titi-eca-apic.webp" },
+    { school: "Southern Cross University", specialist: "P'Titi", poster: "/images/schools/titi-scu.webp" },
+  ],
 };
 
 // ---------------------------------------------------------------------------
@@ -349,57 +418,75 @@ export const partner = {
 // Your move to Australia
 // ---------------------------------------------------------------------------
 export const move = {
-  title: "Your Move to Australia",
-  subtitle: "Once you're enrolled, we stay with you, from the day you land to the week you settle in.",
-  phase1: {
-    label: "Phase 01",
-    title: "When You Arrive",
-    text: "Landing in a new country is the hardest part. We make sure the first 48 hours are taken care of.",
-    /** iconBg: Tailwind background class for the icon tile */
-    items: [
-      { icon: "/images/airplane.png", iconBg: "bg-primary-100", title: "Airport Pick-up", text: "Greeted on arrival and driven safely to your accommodation." },
-      { icon: "/images/house.png", iconBg: "bg-accent-100", title: "Homestay", text: "Trusted host families. A soft landing while you settle in." },
-      { icon: "/images/usim.png", iconBg: "bg-navy-100", title: "Arrival Services", text: "SIM cards, transit passes, orientation. The essentials, sorted." },
-    ],
-  },
-  phase2: {
-    label: "Phase 02",
-    title: "Getting Settled",
-    text: "The paperwork that unlocks work, banking, and everyday life in Australia. Handled with you, step by step.",
-    items: [
-      { icon: "/images/money.png", iconBg: "bg-accent-500/20", title: "TFN", text: "Tax File Number. Required before you start working or open a bank account." },
-      { icon: "/images/money.png", iconBg: "bg-primary-500/25", title: "ABN", text: "Australian Business Number, for freelancing, contracting, or starting a side business." },
-      { icon: "/images/card.png", iconBg: "bg-white/15", title: "ID Card / CRN", text: "Customer Reference Number. Your gateway to Medicare and government services." },
-    ],
-  },
+  title: "More Than Study",
+  subtitle: "We help you settle in Australia: U&I looks after you all the way through your journey.",
+  /** icon: name of an icon in components/icons.tsx (see Move.tsx) */
+  items: [
+    { icon: "home", title: "Accommodation Support", text: "Help finding a place to live, from the U&I team in Australia." },
+    { icon: "briefcase", title: "Job Search Support", text: "Where to look for work, plus our partner network and U&I alumni." },
+    { icon: "device", title: "Arrival Assistance", text: "SIM cards, transport cards, opening a bank account and finding places near your home when you land." },
+    { icon: "clipboard", title: "TFN / ABN Guidance", text: "Step-by-step help applying for your Tax File Number and Australian Business Number." },
+    { icon: "globe", title: "Life in Australia Guidance", text: "Advice on everyday life and the essential services you will need in Australia." },
+    { icon: "users", title: "Student Community & Events", text: "Events at U&I offices in Australia where Thai students meet, make friends and build connections." },
+  ] as { icon: "home" | "briefcase" | "device" | "clipboard" | "globe" | "users"; title: string; text: string }[],
 };
+
 
 // ---------------------------------------------------------------------------
 // Testimonials
 // ---------------------------------------------------------------------------
 export const testimonials = {
   title: "What Our Students Say",
-  subtitle: "Real stories from students who achieved their Australian dream.",
+  subtitle: "Real reviews from students U&I Thailand has helped.",
+  labels: { service: "Service", consultant: "Consultant", readMore: "Read more", source: "Review" },
+  tabs: { reviews: "Student reviews", grants: "Visa grants", study: "Study experiences" },
+  /** Visa grant posts from the U&I Thailand page, newest first. */
+  grants: { alt: "Visa granted", images: ["/images/grants/grant-01.webp", "/images/grants/grant-02.webp", "/images/grants/grant-03.webp", "/images/grants/grant-04.webp", "/images/grants/grant-05.webp", "/images/grants/grant-07.webp", "/images/grants/grant-08.webp", "/images/grants/grant-09.webp", "/images/grants/grant-10.webp", "/images/grants/grant-11.webp", "/images/grants/grant-12.webp", "/images/grants/grant-13.webp", "/images/grants/grant-14.webp", "/images/grants/grant-15.webp"] },
+  /** Students reviewing their schools. */
+  study: { alt: "Student study experience review", images: ["/images/study/greenwich.webp", "/images/study/greenwich-2.webp", "/images/study/greenwich-3.webp", "/images/study/ilsc.webp", "/images/study/ilsc-2.webp", "/images/study/qat.webp", "/images/study/qat-2.webp", "/images/study/qat-3.webp", "/images/study/griffith.webp", "/images/study/kaplan.webp", "/images/study/langports.webp", "/images/study/ep.webp", "/images/study/amca.webp", "/images/study/mcca.webp", "/images/study/impact.webp", "/images/study/oreang.webp"] },
+  /**
+   * Student reviews from the U&I Global Australia Thailand Facebook page.
+   * photo: card photo (cropped from the review graphic); review: the full graphic, opened by "Read more".
+   * Quotes are kept in the student's own words, so they are not translated.
+   */
   items: [
     {
-      quote: "U&I Global made my dream of studying in Queensland a reality. Their team guided me through every step of the process, from choosing the right university to settling in.",
-      initials: "PS",
-      name: "Priya Sharma",
-      role: "International Student, UQ",
+      name: "นิกกี้",
+      photo: "/images/reviews/student-7-v2.webp",
+      review: "/images/reviews/review-7.webp",
+      service: "Visa extension",
+      consultant: "P'Ploy & P'Greenie",
+      quote:
+        "ขอบคุณพี่พลอย กับ พี่กรีนนี่ ที่ดูแลการต่อวีซ่าครั้งนี้ค่ะ คิดว่าอาจจะไม่ผ่าน เพราะโดนขอเอกสารเพิ่ม เครียดมาก แต่ผลออกมาผ่าน โล่งใจมากค่ะ ขอบคุณพี่พลอยที่บอกให้สู้ก่อน อย่าพึ่งยอมแพ้ แล้วก็คอยช่วยตามเอกสาร แล้วก็ดูแลนิกมาตลอด ขอบคุณมากค่ะ",
     },
     {
-      quote: "The support I received from application to enrolment was exceptional and truly personalised. I always felt like they genuinely cared about my success.",
-      initials: "MC",
-      name: "Marco Chen",
-      role: "Graduate Student, Griffith",
+      name: "U&I Student",
+      photo: "/images/reviews/student-8.webp",
+      review: "/images/reviews/review-8.webp",
+      service: "Student visa",
+      consultant: "P'Ploy",
+      quote:
+        "พี่พลอยดูแลดีมากก เอาใจใส่ ตอบเร็ว ตอบทุกคำถาม คอยให้คำปรึกษาปัญหาต่างๆและหาวิธีที่ทำให้วีซ่ามีเปอร์เซ็นต์ผ่านสูง ยื่น 1 สัปดาห์ granted แล้วค่า ดีใจมากๆ รู้สึกดีใจมากๆค่ะที่ตัดสินใจมาทำกับพี่พลอย ❤️",
     },
     {
-      quote: "I couldn't have navigated the visa process and university selection without their expert guidance. They made what felt impossible feel completely manageable.",
-      initials: "AJ",
-      name: "Amara Johnson",
-      role: "Undergraduate, QUT",
+      name: "Sarocha Wansuk",
+      photo: "/images/reviews/student-9.webp",
+      review: "/images/reviews/review-9.webp",
+      service: "Visa change",
+      consultant: "P'Ploy",
+      quote:
+        "Today I met P'Ploy. She is nice and very kind to me, she gave me information about changing my visa. Before, I was worried, but now she has made me feel not nervous anymore 🥰",
     },
-  ],
+    {
+      name: "Few",
+      photo: "/images/reviews/student-10.webp",
+      review: "/images/reviews/review-10.webp",
+      service: "Visa application",
+      consultant: "P'Ploy",
+      quote:
+        "ขอบคุณพี่พลอยมากๆค่ะ ที่ดูแลช่วยเหลือเรื่องเอกสารต่างๆและให้คำปรึกษาที่ดีมากๆ ตอนแรกกังวลกลัวว่าจะไม่ผ่าน แต่การเตรียมตัวและเอกสารของพี่พลอยชัดเจนและครบถ้วนเลย หลังจากส่งเอกสารให้สถานทูตแล้วไปตรวจสุขภาพวีซ่าก็แกรนท์เที่ยงคืนนั้นเลยค่ะ 🥇",
+    },
+  ] as { name: string; photo: string; review: string; service: string; consultant: string; quote: string }[],
 };
 
 // ---------------------------------------------------------------------------
@@ -456,7 +543,7 @@ export const offices = {
   title: "Our Offices",
   subtitle: "Get in touch with the U&I Global team in your region.",
   items: [
-    { name: "Bangkok (Thailand)", phone: "+66 81 116 5186", address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
+    { name: "Bangkok (Thailand)", phone: "081-116-5186", address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
     { name: "Brisbane (Head Office)", phone: "+61 7 3270 7999", email: "information@uandiedu.com", address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia" },
     { name: "Melbourne", phone: "+61 3 9639 6148", address: "Suite 202, Level 2, 517 Flinders Lane, Melbourne VIC 3000, Australia" },
     { name: "Gold Coast", phone: "+61 421 000 060", address: "Level 1, Southport Central Commercial Tower 2, 2106/5 Lawson St., Southport QLD 4215, Australia" },
@@ -482,7 +569,11 @@ export const footer = {
   ],
   contact: {
     email: "information@uandiedu.com",
-    phone: "+61 7 3270 7999",
+    /** Thai office lines, shown in the top bar and footer. */
+    phones: [
+      { number: "081-116-5186", area: "Bangkok" },
+      { number: "099-921-5899", area: "Chiang Mai" },
+    ],
     address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia",
   },
   copyright: "© 2026 U&I Global. All rights reserved.",
@@ -519,4 +610,6 @@ export const ui = {
   privacy: "Privacy Policy",
   backToTop: "Back to top",
   back: "Back",
+  previous: "Previous",
+  next: "Next",
 };

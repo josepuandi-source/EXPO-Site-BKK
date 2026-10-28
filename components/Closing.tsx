@@ -116,10 +116,12 @@ export function Footer() {
                   <MailIcon className="h-4 w-4 shrink-0" />
                   {footer.contact.email}
                 </a>
-                <a href={tel(footer.contact.phone)} className="flex items-center gap-2.5 hover:text-white hover:underline">
-                  <PhoneIcon className="h-4 w-4 shrink-0" />
-                  {footer.contact.phone}
-                </a>
+                {footer.contact.phones.map((p) => (
+                  <a key={p.number} href={tel(p.number)} className="flex items-center gap-2.5 hover:text-white hover:underline">
+                    <PhoneIcon className="h-4 w-4 shrink-0" />
+                    {p.number} ({p.area})
+                  </a>
+                ))}
                 <p className="flex items-start gap-2.5">
                   <PinIcon className="mt-0.5 h-4 w-4 shrink-0" />
                   {footer.contact.address}
