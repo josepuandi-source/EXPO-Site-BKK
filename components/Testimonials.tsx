@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useContent } from "./ContentProvider";
-import { PosterViewer, useOpenPoster } from "./PosterViewer";
+import { PosterViewer } from "./PosterViewer";
 import PosterCarousel from "./PosterCarousel";
 import { Container, Reveal, SectionHeader } from "./ui";
+import { CloseIcon } from "./icons";
 
 function Stars() {
   return (
@@ -15,44 +16,135 @@ function Stars() {
   );
 }
 
+type Review = ReturnType<typeof useContent>["testimonials"]["items"][number];
+
+const FIRST = 8; // cards shown before "See more reviews"
+
+/** Label/value lines under the name: course and school, or service and consultant. */
+function Facts({ t }: { t: Review }) {
+  const { labels } = useContent().testimonials;
+  const rows = [
+    [labels.course, t.course],
+    [labels.school, t.school],
+    [labels.service, t.service],
+    [labels.consultant, t.consultant],
+  ].filter((r): r is [string, string] => Boolean(r[1]));
+  return (
+    <dl className="mt-2 space-y-0.5 text-[15px] text-navy-700">
+      {rows.map(([k, v]) => (
+        <div key={k}>
+          <dt className="inline font-medium">{k}: </dt>
+          <dd className="inline">{v}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function Avatar({ t, sizes }: { t: Review; sizes: string }) {
+  if (t.photo) return <Image src={t.photo} alt={t.name} fill sizes={sizes} className="object-cover" />;
+  return (
+    <div className="grid h-full w-full place-items-center bg-[linear-gradient(135deg,#00936F,#005A48)] font-heading text-7xl font-semibold text-white" aria-hidden="true">
+      {t.name.charAt(0)}
+    </div>
+  );
+}
+
+/** Full review over the page: the Facebook graphic when there is one, otherwise photo and text. */
+function ReviewDialog({ t, onClose }: { t: Review; onClose: () => void }) {
+  const { labels } = useContent().testimonials;
+  const closeRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus({ preventScroll: true });
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+  return (
+    <div role="dialog" aria-modal="true" aria-label={`${labels.source}: ${t.name}`} className="fixed inset-0 z-[80] flex items-center justify-center bg-navy-900/80 p-4 backdrop-blur-sm" onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()} className="relative flex max-h-full w-full max-w-3xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl md:flex-row">
+        <button
+          ref={closeRef}
+          type="button"
+          aria-label={labels.close}
+          onClick={onClose}
+          className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-navy-900 shadow hover:bg-primary-100"
+        >
+          <CloseIcon className="h-5 w-5" />
+        </button>
+        {t.review ? (
+          <div className="relative w-full bg-neutral-100">
+            <Image src={t.review} alt={`${labels.source}: ${t.name}`} width={940} height={788} sizes="(min-width: 768px) 768px, 100vw" className="h-auto w-full" />
+          </div>
+        ) : (
+          <>
+            <div className="relative aspect-[4/3] w-full shrink-0 md:aspect-auto md:w-[42%]">
+              <Avatar t={t} sizes="(min-width: 768px) 320px, 100vw" />
+            </div>
+            <div className="overflow-y-auto p-6 md:p-8">
+              <Stars />
+              <h3 className="mt-1.5 font-heading text-2xl font-semibold text-navy-900">{t.name}</h3>
+              <Facts t={t} />
+              <p className="mt-4 whitespace-pre-line text-[15.5px] leading-relaxed text-navy-700">“{t.quote}”</p>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function ReviewCards() {
   const { testimonials } = useContent();
   const { labels } = testimonials;
-  const openReview = useOpenPoster();
+  const [open, setOpen] = useState<Review | null>(null);
+  const [all, setAll] = useState(false);
+  const close = useCallback(() => setOpen(null), []);
+  const shown = all ? testimonials.items : testimonials.items.slice(0, FIRST);
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {testimonials.items.map((t, i) => (
-        <Reveal key={t.photo} delay={i * 0.06}>
-          <article className="flex h-full flex-col">
-            <div className="relative aspect-square overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(13,31,58,.14)]">
-              <Image src={t.photo} alt={t.name} fill sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw" className="object-cover" />
-            </div>
-            <div className="flex flex-1 flex-col px-1 pt-4">
-              <Stars />
-              <h3 className="mt-1.5 font-heading text-xl font-semibold text-navy-900">{t.name}</h3>
-              <dl className="mt-2 space-y-0.5 text-[15px] text-navy-700">
-                <div>
-                  <dt className="inline font-medium">{labels.service}: </dt>
-                  <dd className="inline">{t.service}</dd>
-                </div>
-                <div>
-                  <dt className="inline font-medium">{labels.consultant}: </dt>
-                  <dd className="inline">{t.consultant}</dd>
-                </div>
-              </dl>
-              <p className="mb-5 mt-3 line-clamp-3 text-[15px] leading-relaxed text-navy-700/80">“{t.quote}”</p>
-              <button
-                type="button"
-                onClick={() => openReview({ src: t.review, alt: `${labels.source}: ${t.name}`, width: 940, height: 788 })}
-                className="mx-auto mt-auto inline-flex min-h-11 items-center rounded-full border-2 border-primary-700 px-7 font-heading text-base font-medium text-primary-700 transition-colors hover:bg-primary-700 hover:text-white"
-              >
-                {labels.readMore}
-              </button>
-            </div>
-          </article>
-        </Reveal>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {shown.map((t, i) => (
+          <Reveal key={t.name} delay={(i % 4) * 0.06}>
+            <article className="flex h-full flex-col">
+              <div className="relative aspect-square overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(13,31,58,.14)]">
+                <Avatar t={t} sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw" />
+              </div>
+              <div className="flex flex-1 flex-col px-1 pt-4">
+                <Stars />
+                <h3 className="mt-1.5 font-heading text-xl font-semibold text-navy-900">{t.name}</h3>
+                <Facts t={t} />
+                <p className="mb-5 mt-3 line-clamp-3 text-[15px] leading-relaxed text-navy-700/80">“{t.quote}”</p>
+                <button
+                  type="button"
+                  onClick={() => setOpen(t)}
+                  className="mx-auto mt-auto inline-flex min-h-11 items-center rounded-full border-2 border-primary-700 px-7 font-heading text-base font-medium text-primary-700 transition-colors hover:bg-primary-700 hover:text-white"
+                >
+                  {labels.readMore}
+                </button>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+      {testimonials.items.length > FIRST && (
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setAll((v) => !v)}
+            className="inline-flex min-h-12 items-center rounded-2xl bg-primary-700 px-8 font-heading text-lg font-medium text-white shadow-[0_8px_18px_rgba(0,90,72,.25)] transition-transform hover:-translate-y-0.5"
+          >
+            {all ? labels.showLess : `${labels.showMore} (${testimonials.items.length - FIRST})`}
+          </button>
+        </div>
+      )}
+      {open && <ReviewDialog t={open} onClose={close} />}
+    </>
   );
 }
 

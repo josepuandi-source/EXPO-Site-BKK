@@ -28,8 +28,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <FinalCta />
         <Schools />
         <Specialists />
-        <Partner />
         <About />
+        <Partner />
         <Move />
         <Testimonials />
         {/* Previous EXPO highlights */}

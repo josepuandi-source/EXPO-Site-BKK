@@ -5,12 +5,12 @@ const th: Record<string, string> = {
   "Join the U&I Global Australia Study & Migration EXPO in Bangkok on 28 November 2026 at Novotel Bangkok on Siam Square. Free 1-on-1 consultations with Australian school and university representatives and migration experts.": "ร่วมงานนิทรรศการเรียนต่อและย้ายถิ่นฐานออสเตรเลียโดย U&I Global ที่กรุงเทพฯ วันที่ 28 พฤศจิกายน 2026 ณ โนโวเทล กรุงเทพ ออน สยามสแควร์ ปรึกษาแบบตัวต่อตัวฟรีกับตัวแทนจากสถาบันและมหาวิทยาลัยในออสเตรเลีย รวมถึงผู้เชี่ยวชาญด้านการย้ายถิ่นฐาน",
 
   // Navigation
-  "Why Attend": "ทำไมต้องมางาน",
+  "Why Attend": "ไฮไลต์ภายในงาน",
   "Events": "กำหนดการ",
-  "Schedule": "กำหนดการ",
+  "Schedule": "วันและสถานที่จัดงาน",
   "Pathways": "เส้นทางการศึกษา",
-  "Register": "ลงทะเบียน",
-  "Register for Free": "ลงทะเบียนฟรี",
+  "Register": "ลงทะเบียนเข้าร่วมฟรี",
+  "Register for Free": "ลงทะเบียนเข้าร่วมฟรี",
 
   // Hero
   "Australia Study Migration Expo 2026": "งานนิทรรศการเรียนต่อและย้ายถิ่นฐานออสเตรเลีย 2026",
@@ -19,20 +19,18 @@ const th: Record<string, string> = {
   "Join us at the 2026 Australia Study & Migration Expo. Free 1-on-1 consultations with University, TAFE, and College representatives and migration experts.":
     "พบกับเราที่งานนิทรรศการเรียนต่อและย้ายถิ่นฐานออสเตรเลีย 2026 ปรึกษาแบบตัวต่อตัวฟรีกับตัวแทนจากมหาวิทยาลัย TAFE และวิทยาลัย รวมถึงผู้เชี่ยวชาญด้านการย้ายถิ่นฐาน",
   "Bangkok · 28 November 2026": "กรุงเทพฯ · 28 พฤศจิกายน 2026",
-  "Claim Your Free Ticket": "รับบัตรเข้างานฟรี",
+  "Claim Your Free Ticket": "ลงทะเบียนเข้าร่วมฟรี",
   "Learn More": "ดูรายละเอียด",
 
   // Dates & recaps
   "Event Dates & Locations": "วันและสถานที่จัดงาน",
-  "Find us in a city near you.": "พบกับเราในเมืองใกล้คุณ",
-  "Brisbane EXPO Recap": "ภาพบรรยากาศงานที่บริสเบน",
-  "That's a wrap on the Brisbane EXPO!": "งานนิทรรศการที่บริสเบนจบลงอย่างสวยงาม!",
-  "A big thank you to our attendees, schools, and partners who made the event a success.":
-    "ขอขอบคุณผู้เข้าร่วมงาน สถาบันการศึกษา และพันธมิตรทุกท่านที่ทำให้งานนี้ประสบความสำเร็จ",
+  "Find us in a city near you.": "พบกับทีม U&I Global และสถาบันการศึกษาจากออสเตรเลีย",
+  "Brisbane EXPO Recap": "ภาพบรรยากาศงาน U&I Global EXPO ที่บริสเบน",
+  "That's a wrap on the Brisbane EXPO!": "งาน U&I Global EXPO ที่บริสเบนจบลงอย่างน่าประทับใจ",
+  "A big thank you to our attendees, schools, and partners who made the event a success.": "ขอขอบคุณนักเรียน สถาบันการศึกษา ที่มาร่วมเป็นส่วนหนึ่งของงานและทำให้งานครั้งนี้ประสบความสำเร็จอย่างอบอุ่น",
   "Brisbane Expo": "งานนิทรรศการที่บริสเบน",
-  "Melbourne EXPO Recap": "ภาพบรรยากาศงานที่เมลเบิร์น",
-  "That's a wrap on the Melbourne EXPO! A big thank you to our attendees, schools, and partners who made the event a success.":
-    "งานนิทรรศการที่เมลเบิร์นจบลงอย่างสวยงาม! ขอขอบคุณผู้เข้าร่วมงาน สถาบันการศึกษา และพันธมิตรทุกท่านที่ทำให้งานนี้ประสบความสำเร็จ",
+  "Melbourne EXPO Recap": "ภาพบรรยากาศงาน U&I Global EXPO ที่เมลเบิร์น",
+  "That's a wrap on the Melbourne EXPO! A big thank you to our attendees, schools, and partners who made the event a success.": "งาน U&I Global EXPO ที่เมลเบิร์นจบลงอย่างน่าประทับใจ ขอขอบคุณนักเรียน สถาบันการศึกษา ที่มาร่วมเป็นส่วนหนึ่งของงานและทำให้งานครั้งนี้ประสบความสำเร็จอย่างอบอุ่น",
   "Melbourne Expo": "งานนิทรรศการที่เมลเบิร์น",
   "28 November 2026": "28 พฤศจิกายน 2026",
   "17 December 2026": "17 ธันวาคม 2026",
@@ -54,7 +52,7 @@ const th: Record<string, string> = {
   "Australian souvenir for the first 29 guests*": "ของที่ระลึกจากออสเตรเลีย 29 คนแรก*",
   "*Conditions as set by the company.": "*เงื่อนไขเป็นไปตามที่บริษัทกำหนด",
   "*The first 29 guests to check in receive an Australian souvenir (celebrating 29 years of U&I Global).": "*29 คนแรกที่เช็คอินที่งานรับของที่ระลึกจากออสเตรเลีย (ครบรอบ 29 ปี U&I Global)",
-  "Register free": "ลงทะเบียนฟรี",
+  "Register free": "ลงทะเบียนเข้าร่วมฟรี",
   "Completed": "จัดงานแล้ว",
   "15 October 2026": "15 ตุลาคม 2026",
   "1 October 2026": "1 ตุลาคม 2026",
@@ -72,7 +70,7 @@ const th: Record<string, string> = {
   "Davao, Philippines": "ดาเวา ฟิลิปปินส์",
 
   // Why attend
-  "Why Attend the Expo?": "ทำไมต้องมางาน EXPO?",
+  "Why Attend the Expo?": "ทำไมต้องมางาน U&I Global EXPO?",
   "Talk directly with Australian schools, the U&I team and people living in Australia, all in one afternoon.":
     "คุยตรงกับตัวแทนสถาบันจากออสเตรเลีย ทีม U&I และพี่ ๆ ที่ใช้ชีวิตอยู่ในออสเตรเลียจริง จบในงานเดียว",
   "Meet Australian schools in person": "พบตัวแทนสถาบันตัวจริง",
@@ -87,9 +85,9 @@ const th: Record<string, string> = {
   "Rows of 1-on-1 consultations at a U&I EXPO": "โต๊ะปรึกษาแบบตัวต่อตัวในงาน U&I EXPO",
   "Work and Holiday: visa, short courses, jobs and housing": "Work and Holiday: วีซ่า คอร์สระยะสั้น หางาน หาที่พัก",
   "Short courses & summer programs": "คอร์สระยะสั้น & ซัมเมอร์",
-  "English for everyday life, business or degree study": "เรียนภาษาอังกฤษ: ชีวิตประจำวัน / ธุรกิจ / เตรียมเรียนต่อปริญญา",
+  "English for everyday life, business or degree study": "เรียนภาษาอังกฤษในชีวิตประจำวัน / ธุรกิจ / เรียนต่อปริญญา",
   "Skills-shortage careers for your future in Australia": "สายวิชาชีพขาดแคลน ต่อยอดอนาคตในออสเตรเลีย",
-  "Bachelor's, Master's and PhD": "ปริญญาตรี – โท – เอก",
+  "Bachelor's, Master's and PhD": "ปริญญาตรี–ปริญญาโท-เอก",
   "Register early for a chance to win a free flight!": "ลงทะเบียนล่วงหน้า ลุ้นรับตั๋วเครื่องบินฟรี!",
   "*Flight draw for pre-registered guests only, conditions apply.": "*สิทธิ์ลุ้นตั๋วเครื่องบินสำหรับผู้ลงทะเบียนล่วงหน้าตามเงื่อนไขเท่านั้น",
   "Planning to go to Australia in 2027? Don't miss this one.": "ใครวางแผนไปออสเตรเลียปี 2027 งานนี้ไม่ควรพลาด 🥰",
@@ -133,8 +131,8 @@ const th: Record<string, string> = {
   "Benefit Nº": "สิทธิประโยชน์ที่",
 
   // Videos
-  "Watch Our Story": "ชมเรื่องราวของเรา",
-  "A closer look at our recent U&I Global EXPOs.": "ชมบรรยากาศงานนิทรรศการ U&I Global ครั้งล่าสุดของเรา",
+  "Watch Our Story": "ชมบรรยากาศงานที่ผ่านมา",
+  "A closer look at our recent U&I Global EXPOs.": "ชมบรรยากาศงาน U&I Global EXPO ที่ผ่านมาในแต่ละเมือง",
   "Brisbane": "บริสเบน",
   "Melbourne": "เมลเบิร์น",
   "U&I Global Expo: Brisbane": "U&I Global Expo: บริสเบน",
@@ -223,12 +221,12 @@ const th: Record<string, string> = {
   "Undergraduate, QUT": "นักศึกษาปริญญาตรี, QUT",
 
   // Final CTA & offices
-  "Secure Your Free Spot": "จองที่นั่งฟรีของคุณ",
-  "Register in seconds. No cost, no obligation.": "ลงทะเบียนได้ในไม่กี่วินาที ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด",
+  "Secure Your Free Spot": "ลงทะเบียนเข้าร่วมงานฟรี",
+  "Register in seconds. No cost, no obligation.": "งานฟรี ไม่มีค่าใช้จ่าย พร้อมรับสิทธิพิเศษสำหรับผู้ลงทะเบียนล่วงหน้า",
   "EXPO registration form": "แบบฟอร์มลงทะเบียนงานนิทรรศการ",
   "Form not loading? Open it in a new tab": "แบบฟอร์มไม่แสดง? เปิดในแท็บใหม่",
   "Our Offices": "สำนักงานของเรา",
-  "Get in touch with the U&I Global team in your region.": "ติดต่อทีมงาน U&I Global ในพื้นที่ของคุณ",
+  "Get in touch with the U&I Global team in your region.": "ติดต่อทีมงานของเราเพื่อรับคำปรึกษา",
   "Brisbane (Head Office)": "บริสเบน (สำนักงานใหญ่)",
   "Seoul (Korea)": "โซล (เกาหลี)",
   "Busan (Korea)": "ปูซาน (เกาหลี)",
@@ -240,8 +238,8 @@ const th: Record<string, string> = {
   "Digitally integrated operational office managed by U&I staff": "สำนักงานดิจิทัลที่ดูแลโดยเจ้าหน้าที่ U&I",
 
   // Footer
-  "Your trusted partner for Australian education & migration.": "พันธมิตรที่ไว้วางใจได้ด้านการศึกษาและการย้ายถิ่นฐานในออสเตรเลีย",
-  "Trusted by 5,000+ students worldwide": "นักเรียนกว่า 5,000 คนทั่วโลกไว้วางใจ",
+  "Your trusted partner for Australian education & migration.": "ผู้เชี่ยวชาญด้านการเรียนต่อและการวางแผนเส้นทางในออสเตรเลีย ตั้งแต่ปี 1997",
+  "Trusted by 5,000+ students worldwide": "ได้รับความไว้วางใจจากนักเรียนกว่า 5,000 คนทั่วโลก",
   "© 2026 U&I Global. All rights reserved.": "© 2026 U&I Global สงวนลิขสิทธิ์",
 
   // Interface labels
@@ -252,7 +250,7 @@ const th: Record<string, string> = {
   "Expo Poster": "โปสเตอร์งาน",
   "Upcoming EXPO promo": "โปรโมชันงานครั้งถัดไป",
   "Play video:": "เล่นวิดีโอ:",
-  "Quick Links": "ลิงก์ด่วน",
+  "Quick Links": "เกี่ยวกับงาน",
   "Contact": "ติดต่อ",
   "Privacy Policy": "นโยบายความเป็นส่วนตัว",
   "Back to top": "กลับขึ้นด้านบน",
@@ -260,9 +258,9 @@ const th: Record<string, string> = {
   // Specials — Bangkok Expo U&I Exclusive Services
   "Student visa fee scholarship of up to $2,050": "รับทุนช่วยเหลือค่าวีซ่านักเรียนสูงสุด $2,050",
   "20% off flights to Australia & New Zealand": "รับส่วนลดตั๋วเครื่องบินไปออสเตรเลียและนิวซีแลนด์ 20%",
-  "Course application, with no application or processing fees": "สมัครเรียน ไม่มีค่าธรรมเนียมการสมัครและค่าดำเนินการ",
+  "Course application, with no application or processing fees": "สมัครเรียนฟรี ไม่มีค่าธรรมเนียมการสมัครและค่าดำเนินการ",
   "IELTS / PTE English level mock test": "ทดสอบวัดระดับภาษาอังกฤษ IELTS / PTE",
-  "Australian souvenir for the first 29 guests!": "รับของที่ระลึกจากออสเตรเลีย สำหรับ 29 คนแรก!",
+  "Australian souvenir for the first 29 guests!": "รับของที่ระลึกจากออสเตรเลียฟรี สำหรับ 29 คนแรก!",
   // More Than Study
   "More Than Study": "มากกว่าเรื่องเรียน",
   "We help you settle in Australia: U&I looks after you all the way through your journey.": "U&I พร้อมดูแลนักเรียนตลอดเส้นทางในออสเตรเลีย",
@@ -326,6 +324,35 @@ const th: Record<string, string> = {
   "Student study experience review": "รีวิวประสบการณ์เรียนของนักเรียน",
   "Previous": "ก่อนหน้า",
   "Next": "ถัดไป",
+  "Open the door to your future in Australia. Meet universities, TAFEs, language schools and vocational colleges, and get advice on study, visas and planning your path in Australia, all in one event.": "เปิดโอกาสสู่อนาคตในออสเตรเลีย พบตัวแทนจากมหาวิทยาลัย TAFEs สถาบันภาษา สถาบันวิชาชีพ และมหาวิทยาลัยชั้นนำ พร้อมรับคำแนะนำด้านการเรียนต่อ วีซ่า และการวางแผนเส้นทางในออสเตรเลียภายในงานเดียว",
+  "1:1 consultations": "ปรึกษาแบบ 1:1",
+  "Talk directly with school representatives": "พูดคุยโดยตรงกับตัวแทนจากสถาบัน",
+  "Visa & migration advice": "ปรึกษาด้านวีซ่าและ Migration",
+  "Free initial visa advice from our specialists": "รับคำแนะนำเบื้องต้นด้านวีซ่าฟรีจากผู้เชี่ยวชาญ",
+  "Find the right scholarship and special promotions": "ค้นหาทุนที่ใช่ และโปรโมชั่นพิเศษ",
+  "Initial eligibility check": "ประเมินคุณสมบัติเบื้องต้น",
+  "Document checks and study planning": "เช็กเอกสาร และวางแผนการเรียนต่อ",
+  "Talk 1-on-1 with the U&I Global team, whatever you are interested in": "พร้อมมาคุยกับทีม U&I Global แบบตัวต่อตัว ไม่ว่าจะสนใจ",
+  "Work and Holiday: visa advice, short courses, finding work and a home": "Work and Holiday ปรึกษาวีซ่า-คอร์สระยะสั้น-หางาน/บ้านยังไง",
+  "Short courses and summer programs": "คอร์สระยะสั้น ซัมเมอร์ระยะสั้น",
+  "TAFEs and leading Australian institutions are all coming, with plenty to choose from!": "มาพบกับ TAFEs และสถาบันการศึกษาชั้นนำจากออสเตรเลีย ยกทัพมาให้เลือกกันแบบจัดเต็ม! 🇦🇺✨",
+  "Special offers and great-value promotions, only at the EXPO!": "⭐️ พร้อมรับสิทธิพิเศษและโปรโมชันสุดคุ้ม เฉพาะภายในงานเท่านั้น!",
+  "Australian study advice since 1997": "ให้คำปรึกษาเกี่ยวกับการเรียนต่อออสเตรเลีย ตั้งแต่ปี 1997",
+  "For over 29 years U&I Global has helped students plan their study abroad, from choosing a course and institution to mapping out their future education pathway.": "กว่า 29 ปีที่ U&I Global ช่วยนักเรียนวางแผนเรียนต่อต่างประเทศ ตั้งแต่การเลือกหลักสูตรและสถาบัน ไปจนถึงการวางแผนเส้นทางการศึกษาในอนาคต",
+  "With teams and networks in many countries, we give personal advice and connect students with quality education opportunities.": "ด้วยทีมงานและเครือข่ายในหลายประเทศ เรามุ่งมั่นให้คำแนะนำแบบเฉพาะบุคคล พร้อมเชื่อมต่อนักเรียนกับโอกาสทางการศึกษาที่มีคุณภาพ",
+  "**Step into our 30th year with U&I Global in 2027.**": "**ก้าวสู่ปีที่ 30 ไปกับ U&I Global ในปี 2027**",
+  "Why do students and parents choose U&I Global Australia?": "ทำไมนักเรียนและผู้ปกครองถึงเลือก U&I Global Australia?",
+  "Headquartered in Australia": "สำนักงานใหญ่อยู่ที่ประเทศออสเตรเลีย",
+  "A properly registered Australian company": "บริษัทจดทะเบียนในออสเตรเลียถูกต้อง",
+  "An officially accredited education agent for universities, TAFEs and Education Queensland International (EQI) institutions": "เราเป็นตัวแทนการศึกษาที่ได้รับการรับรองอย่างเป็นทางการจาก มหาวิทยาลัย, TAFE และสถาบันภายใต้ Education Queensland International (EQI)",
+  "Almost 30 years, since 1997, looking after students from around the world coming to Australia": "ประสบการณ์เกือบ 30 ปี ตั้งแต่ปี 1997 ในการดูแลนักเรียนจากทั่วโลกมาออสเตรเลีย",
+  "We look after you from Thailand all the way to Australia": "พวกเราดูแลน้อง ๆ ตั้งแต่ประเทศไทยถึงออสเตรเลีย",
+  "Free study consultations, with no processing fees": "ปรึกษาเรียนต่อฟรี ไม่มีค่าดำเนินการ",
+  "Course": "หลักสูตร",
+  "School": "สถาบัน",
+  "See more reviews": "ดูรีวิวเพิ่มเติม",
+  "Show fewer reviews": "แสดงน้อยลง",
+  "Close": "ปิด",
 };
 
 export default th;

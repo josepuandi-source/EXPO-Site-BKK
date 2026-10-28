@@ -187,34 +187,35 @@ export const dates = {
 // ---------------------------------------------------------------------------
 export const whyAttend = {
   title: "Why Attend the Expo?",
-  text: "Talk directly with Australian schools, the U&I team and people living in Australia, all in one afternoon.",
-  /** icon: "globe" | "users" | "home" */
+  text: "Open the door to your future in Australia. Meet universities, TAFEs, language schools and vocational colleges, and get advice on study, visas and planning your path in Australia, all in one event.",
+  /** icon: "users" | "shield" | "dollar" | "clipboard" */
   items: [
-    { icon: "globe", photo: "/images/why/consult-rep.webp", title: "Meet Australian schools in person", sub: "TAFEs and leading Australian institutions, all under one roof" },
-    { icon: "users", photo: "/images/why/consult-team.webp", title: "1-on-1 with the U&I team", sub: "Experienced advisers to plan your study and visa" },
-    { icon: "home", photo: "/images/why/crowd-talks.webp", title: "Real stories from Australia", sub: "Tips from U&I staff who actually live there" },
-  ] as { icon: "globe" | "users" | "home"; photo: string; title: string; sub: string }[],
+    { icon: "users", photo: "/images/why/consult-rep.webp", title: "1:1 consultations", sub: "Talk directly with school representatives" },
+    { icon: "shield", photo: "/images/why/consult-team.webp", title: "Visa & migration advice", sub: "Free initial visa advice from our specialists" },
+    { icon: "dollar", photo: "/images/why/crowd-tables.webp", title: "Scholarship opportunities", sub: "Find the right scholarship and special promotions" },
+    { icon: "clipboard", photo: "/images/why/consult-rows.webp", title: "Initial eligibility check", sub: "Document checks and study planning" },
+  ] as { icon: "users" | "shield" | "dollar" | "clipboard"; photo: string; title: string; sub: string }[],
   /** Crowd shots from past U&I EXPOs, shown as a strip under the reasons. */
   photos: [
     { src: "/images/why/crowd-hall.webp", alt: "A packed U&I EXPO hall" },
-    { src: "/images/why/crowd-tables.webp", alt: "Students consulting with schools at a U&I EXPO" },
-    { src: "/images/why/consult-rows.webp", alt: "Rows of 1-on-1 consultations at a U&I EXPO" },
+    { src: "/images/why/crowd-talks.webp", alt: "Students consulting with schools at a U&I EXPO" },
   ],
-  topicsTitle: "Ask us about",
+  topicsTitle: "Talk 1-on-1 with the U&I Global team, whatever you are interested in",
   topics: [
-    "Work and Holiday: visa, short courses, jobs and housing",
-    "Short courses & summer programs",
+    "Work and Holiday: visa advice, short courses, finding work and a home",
+    "Short courses and summer programs",
     "English for everyday life, business or degree study",
     "Skills-shortage careers for your future in Australia",
     "Bachelor's, Master's and PhD",
   ],
   promo: {
-    title: "Register early for a chance to win a free flight!",
-    note: "*Flight draw for pre-registered guests only, conditions apply.",
+    title: "TAFEs and leading Australian institutions are all coming, with plenty to choose from!",
+    text: "Special offers and great-value promotions, only at the EXPO!",
     cta: "Register free",
     tagline: "Planning to go to Australia in 2027? Don't miss this one.",
   },
 };
+
 
 
 // ---------------------------------------------------------------------------
@@ -275,9 +276,9 @@ export const specials = {
     { icon: "visa", text: "Student visa fee scholarship of up to $2,050", free: false },
     { icon: "ticket", text: "20% off flights to Australia & New Zealand", free: false },
     { icon: "van", text: "Airport pick-up", free: true },
-    { icon: "cap", text: "Course application, with no application or processing fees", free: true },
+    { icon: "cap", text: "Course application, with no application or processing fees", free: false },
     { icon: "ielts", text: "IELTS / PTE English level mock test", free: true },
-    { icon: "koala", text: "Australian souvenir for the first 29 guests!", free: true },
+    { icon: "koala", text: "Australian souvenir for the first 29 guests!", free: false },
   ] as { icon: "cap" | "ielts" | "van" | "ticket" | "visa" | "koala"; text: string; free: boolean }[],
   notes: [
     "*Conditions as set by the company.",
@@ -409,12 +410,12 @@ export const videos = {
 export const about = {
   /** Wrap the highlighted part in **double asterisks**. */
   title: "About **U&I Global**",
-  subtitle: "Trusted guidance since 1997",
+  subtitle: "Australian study advice since 1997",
   /** Use **double asterisks** to bold-highlight a phrase. */
   paragraphs: [
-    "Since 1997, U&I Global has helped students pursue international education and achieve their study abroad goals. As we approach our **30th Anniversary in 2027**, we continue to provide trusted guidance and personalized support throughout every step of the student journey.",
-    "As a **100% wholly owned and operated** organization, our teams across multiple countries work together to help students choose the right course, institution, and pathway for their future.",
-    "Through our global network, U&I Global continues to connect students with quality Australian education opportunities.",
+    "For over 29 years U&I Global has helped students plan their study abroad, from choosing a course and institution to mapping out their future education pathway.",
+    "With teams and networks in many countries, we give personal advice and connect students with quality education opportunities.",
+    "**Step into our 30th year with U&I Global in 2027.**",
   ],
 };
 
@@ -422,23 +423,17 @@ export const about = {
 // Why partner
 // ---------------------------------------------------------------------------
 export const partner = {
-  title: "Why Partner with U&I Global",
-  subtitle: "Three decades of accountability. Five credentials every family, institution, and government partner can verify.",
-  flagship: {
-    kicker: "Nº 01 · Flagship Credential",
-    titleLines: ["An Australian", "Government–Registered"],
-    titleHighlight: "Company.",
-    text: "U&I Global is a wholly-registered Australian corporation. Not a franchise, not a representative office. That registration backs every scholarship, visa filing, and enrollment we handle.",
-    seal: { top: "Registered", year: "1997", bottom: "Established", foot: "Australia · Wholly-Owned" },
-  },
-  /** icon: "shield" | "building" | "academic" | "badge" */
+  title: "Why do students and parents choose U&I Global Australia?",
   items: [
-    { no: "02", icon: "shield", title: "3 Decades of Trust", text: "Since 1997, guiding students across seven markets worldwide." },
-    { no: "03", icon: "building", title: "100% Fully-Owned", text: "Wholly-owned offices in every market we operate. No local licensees." },
-    { no: "04", icon: "academic", title: "Australian Education Specialist", text: "Focused exclusively on Australian universities, TAFEs and pathway providers." },
-    { no: "05", icon: "badge", title: "Strict Quality Assurance", text: "Documented QA review on every application. No shortcuts, no surprises." },
-  ] as { no: string; icon: "shield" | "building" | "academic" | "badge"; title: string; text: string }[],
+    { emoji: "🇦🇺", text: "Headquartered in Australia" },
+    { emoji: "🏢", text: "A properly registered Australian company" },
+    { emoji: "🎓", text: "An officially accredited education agent for universities, TAFEs and Education Queensland International (EQI) institutions" },
+    { emoji: "⭐", text: "Almost 30 years, since 1997, looking after students from around the world coming to Australia" },
+    { emoji: "💚", text: "We look after you from Thailand all the way to Australia" },
+    { emoji: "🤝", text: "Free study consultations, with no processing fees" },
+  ],
 };
+
 
 // ---------------------------------------------------------------------------
 // Your move to Australia
@@ -464,18 +459,88 @@ export const move = {
 export const testimonials = {
   title: "What Our Students Say",
   subtitle: "Real reviews from students U&I Thailand has helped.",
-  labels: { service: "Service", consultant: "Consultant", readMore: "Read more", source: "Review" },
+  labels: { service: "Service", consultant: "Consultant", course: "Course", school: "School", readMore: "Read more", source: "Review", showMore: "See more reviews", showLess: "Show fewer reviews", close: "Close" },
   tabs: { reviews: "Student reviews", grants: "Visa grants", study: "Study experiences" },
   /** Visa grant posts from the U&I Thailand page, newest first. */
   grants: { alt: "Visa granted", images: ["/images/grants/grant-01.webp", "/images/grants/grant-02.webp", "/images/grants/grant-03.webp", "/images/grants/grant-04.webp", "/images/grants/grant-05.webp", "/images/grants/grant-07.webp", "/images/grants/grant-08.webp", "/images/grants/grant-09.webp", "/images/grants/grant-10.webp", "/images/grants/grant-11.webp", "/images/grants/grant-12.webp", "/images/grants/grant-13.webp", "/images/grants/grant-14.webp", "/images/grants/grant-15.webp"] },
   /** Students reviewing their schools. */
   study: { alt: "Student study experience review", images: ["/images/study/greenwich.webp", "/images/study/greenwich-2.webp", "/images/study/greenwich-3.webp", "/images/study/ilsc.webp", "/images/study/ilsc-2.webp", "/images/study/qat.webp", "/images/study/qat-2.webp", "/images/study/qat-3.webp", "/images/study/griffith.webp", "/images/study/kaplan.webp", "/images/study/langports.webp", "/images/study/ep.webp", "/images/study/amca.webp", "/images/study/mcca.webp", "/images/study/impact.webp", "/images/study/oreang.webp"] },
   /**
-   * Student reviews from the U&I Global Australia Thailand Facebook page.
-   * photo: card photo (cropped from the review graphic); review: the full graphic, opened by "Read more".
+   * Student reviews: from the EXPO review sheet and the U&I Global Australia Thailand Facebook page.
    * Quotes are kept in the student's own words, so they are not translated.
    */
   items: [
+    {
+      name: "Potea",
+      photo: "/images/reviews/student-potea.webp",
+      course: "Certificate IV in Kitchen Management, Diploma & Advanced Diploma of Hospitality Management",
+      school: "TAFE QLD / SBTA & SELA",
+      quote:
+        "ทาง U&I พี่ๆให้บริการและคำแนะนำที่ดีมากและใจดีมาก โดยส่วนตัวแล้วปรึกษาข้อมูลกับทางพี่ที ที่มาดูแลในส่วนข้อมูลต่างๆ พี่ทีคอยให้แนะนำที่เหมาะสมและใส่ใจรายละเอียดต่างๆดีมากครับ ขอบคุณทางบริษัทและทางพี่ทีที่ใส่ใจนักเรียนดีมากครับ ไม่ผิดหวังเลยจริงๆครับ",
+    },
+    {
+      name: "Saipan Duangkamon",
+      photo: "/images/reviews/student-saipan-v3.webp",
+      course: "General English",
+      school: "QAT",
+      quote:
+        "เราเรียนภาษาอังกฤษที่สถาบัน QAT โดยสมัครผ่าน U&I Global เลยอยากมาแชร์ประสบการณ์จริง เผื่อใครกำลังตัดสินใจอยู่ค่ะ ส่วนตัวประทับใจ agent มาก เอเจ้นท์ที่ดูแลเราชื่อพี่ทีทีค่ะ ช่วยจัดการเอกสารเรียนให้ทั้งหมด มีอธิบายขั้นตอนชัดเจน ไม่มีค่าใช้จ่ายเพิ่มจากที่แจ้งไว้เลย 😊\n\nโรงเรียนสอนค่อนข้างสบายๆ ครูเป็นเจ้าของภาษา อธิบายเข้าใจง่าย ห้องเรียนไม่ใหญ่มาก เพื่อนในคลาสหลากหลาย ทำให้มีโอกาสพูดเยอะ โรงเรียนนี้ agent เป็นคนแนะนำ ซึ่งตรงกับเป้าหมายเรา ✅\n\nโดยรวมแนะนำสำหรับคนที่อยากเรียนภาษาแบบค่อยเป็นค่อยไป หรือถ้าใครถือ WAH แล้วอยากลองเรียนก่อนเปลี่ยนวีซ่านักเรียนแบบเราก็ได้ และต้องการ agent ที่ดูแลใกล้ชิดแนะนำเลยค่ะ 🤩",
+    },
+    {
+      name: "BB",
+      photo: "/images/reviews/student-bb.webp",
+      course: "General English + IELTS Preparation",
+      school: "ILSC",
+      quote:
+        "พี่ทีที ให้คำปรึกษาดีมาก☺️ มีตัวเลือกโรงเรียนให้เยอะมากค่ะ เอกสารก็เตรียมง่ายไม่วุ่นวายเลยค่ะ ไม่เครียดเลยเพราะว่าพี่เค้าจัดการให้หมด เราแค่มีหน้าที่เตรียมเอกสารและเลือกโรงเรียนที่เราอยากจะเรียน แล้วผลวีซ่าออกไวมากมากๆ🎉✨ ไม่มีการเรียกเอกสารเพิ่มเติมเลยค่ะ วีซ่าออกหลังจากยื่นขอแค่ 10 นาที ขอบคุณพี่ทีมากๆเลยค่ะ🙏💖✨",
+    },
+    {
+      name: "GG",
+      photo: "/images/reviews/student-gg.webp",
+      course: "Diploma of Health Science (Nursing), Master of Nursing",
+      school: "QUT",
+      quote:
+        "เลือกต่อวีซ่ากับ U&I ไม่ผิดหวัง วีซ่าผ่านหลังตรวจสุขภาพเสร็จ ต้องยกให้พี่ทีเลย ขอบคุณนะคะ แนะนำทุกคนให้ติดตามกิจกรรมตามเพจ บางทีมีส่วนลดวีซ่าอีกด้วย ดีมากก🥹",
+    },
+    {
+      name: "Fahsai",
+      photo: "/images/reviews/student-fahsai-v2.webp",
+      course: "Master of Digital Communication",
+      school: "QUT",
+      quote:
+        "ชอบบริการของ U&I ตรงที่รับเรื่องไวค่ะ พี่เอเจนท์บริการดีมากกๆ ส่วนตัวเจอขั้นตอนลำบากนิดนึง แต่ได้พี่ๆช่วยตามเรื่องให้ค่อนข้างเร็วเลยค่ะ ของเราเป็นพี่เอเจนท์ชื่อพี่ทีค่ะ น่ารักมากๆ 👍🏻",
+    },
+    {
+      name: "Kelly",
+      photo: "/images/reviews/student-kelly.webp",
+      course: "Bachelor of Psychological Science",
+      school: "Griffith University",
+      quote:
+        "ขอบคุณพี่ๆที่ช่วยดำเนินการครับ เพื่อน ๆ ในคลาสมีหลายสัญชาติ ตอนแรกคิดว่าจะมีแต่นักเรียนต่างชาติ แต่จริง ๆ แล้วมีนักเรียนออสเตรเลียเยอะ ตอนแลกเปลี่ยนไอเดียสนุก และทำงานกลุ่มก็ง่ายขึ้น รู้สึกคิดถูกที่เรียนที่ต่างประเทศ เพราะชื่อเสียงของมหาวิทยาลัย คิดว่าจะเป็นผลดีในอนาคตครับ",
+    },
+    {
+      name: "Ginny",
+      photo: "/images/reviews/student-ginny.webp",
+      course: "General English",
+      school: "Greenwich College",
+      quote:
+        "Super grateful to U&I Global Brisbane, my visa just got approved! Big thanks to P'Tee for helping me through the whole process. She was so friendly, patient, and always there when I had questions. Made everything way less stressful. Really appreciate all the support from the team too. Highly recommend them if you're sorting out your visa!",
+    },
+    {
+      name: "Kamonrat Boonchuen",
+      photo: "/images/reviews/student-kamonrat.webp",
+      course: "Master of Accounting",
+      school: "Kaplan Business School",
+      quote:
+        "A huge thank you to N'Mookie and the U&I team! 💖 Mookie was super detailed and supportive with all the documents, making everything so easy for me. We submitted the application yesterday, and it got auto-granted today! 🎉 I'm so happy I chose this team — friendly, professional, and truly amazing at what they do. Highly recommended!",
+    },
+    {
+      name: "Sunkiss",
+      photo: "/images/reviews/student-sunkiss.webp",
+      course: "General English, Advanced Diploma in Civil Construction and Design",
+      school: "IH-ALS",
+      quote: "ขอบคุณ U&I ที่แนะนำและช่วยเหลืออย่างดีในความฝัน เข้าสู่การเรียน ออสเตรเลีย",
+    },
     {
       name: "นิกกี้",
       photo: "/images/reviews/student-7-v2.webp",
@@ -512,7 +577,38 @@ export const testimonials = {
       quote:
         "ขอบคุณพี่พลอยมากๆค่ะ ที่ดูแลช่วยเหลือเรื่องเอกสารต่างๆและให้คำปรึกษาที่ดีมากๆ ตอนแรกกังวลกลัวว่าจะไม่ผ่าน แต่การเตรียมตัวและเอกสารของพี่พลอยชัดเจนและครบถ้วนเลย หลังจากส่งเอกสารให้สถานทูตแล้วไปตรวจสุขภาพวีซ่าก็แกรนท์เที่ยงคืนนั้นเลยค่ะ 🥇",
     },
-  ] as { name: string; photo: string; review: string; service: string; consultant: string; quote: string }[],
+    {
+      name: "Puyfhay Maneekarn",
+      quote:
+        "ประทับใจ U&I มากค่ะ โดยเฉพาะคุณมุก ได้รับคำปรึกษาที่ละเอียดชัดเจนตรงไปตรงมา ช่วยเหลือทุกด้านที่กังวลเลย ทำให้วีซ่าเราผ่านแบบ auto granted แนะนำต่ออีกแน่นอนค่าา🫶🏼",
+    },
+    {
+      name: "Nareedon Inkaew",
+      quote:
+        "ทีมนี้ให้คำแนะนำดีมากๆ ล้านตัวค่ะ ไม่ทิ้ง ไม่เท ไม่หาย ไม่เข้าใจตรงไหนให้คำปรึกษาดีมากค่ะ พูดเพราะ เหมือนคนในครอบครัว ขอแค่เปิดใจคุยกับทีม มีอะไรให้พูดให้บอกตรงๆนะคะ ขอบคุณทีมงานทุกๆคนนะคะ เลิฟฟ🫶🏻💖",
+    },
+    {
+      name: "Bobbie",
+      quote:
+        "พี่มุกดูแลดีมากกก ให้คำแนะนำเรื่องการเตรียมเอกสารต่างๆ ได้ดีและละเอียดมากค่ะ ประทับใจมาก ตอนแรกแอบกังวลว่าวีซ่าจะผ่านมั้ย สรุปได้ auto granted ต้องขอบคุณพี่มุกมากๆเลยนะคะ🫶🏻💕\n\nปล. ใครกำลังหา agency ไปเรียนออส แนะนำ U&I เลยค่า แล้วจะไม่ผิดหวัง😍",
+    },
+    {
+      name: "Saisuda Pamaungmoon",
+      quote:
+        "ขอบคุณพี่อิ๋วและทีมงานเอเจ้นซี่ทุกคนมากนะคะ ที่คอยดูแลและให้คำแนะนำตั้งแต่การเลือกเมือง การเตรียมเอกสาร ไปจนถึงการยื่นวีซ่า รวมถึงตอบทุกข้อสงสัยและให้คำปรึกษาในทุกขั้นตอน จนวันนี้วีซ่าผ่านเรียบร้อยแล้ว 😊\n\nประทับใจในการดูแลและความใส่ใจของทีมงานมากค่ะ แนะนำเลยสำหรับใครที่กำลังมองหาเอเจ้นซี่ดี ๆ ขอบคุณอีกครั้งนะคะ 🙏",
+    },
+  ] as {
+    name: string;
+    /** Card photo; without one the card shows the student's initial. */
+    photo?: string;
+    /** Full review graphic from the Facebook page, shown in the pop-up instead of the photo. */
+    review?: string;
+    course?: string;
+    school?: string;
+    service?: string;
+    consultant?: string;
+    quote: string;
+  }[],
 };
 
 // ---------------------------------------------------------------------------
@@ -569,7 +665,7 @@ export const offices = {
   title: "Our Offices",
   subtitle: "Get in touch with the U&I Global team in your region.",
   items: [
-    { name: "Bangkok (Thailand)", phone: "081-116-5186", address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
+    { name: "Bangkok (Thailand)", phone: "+66 81-116-5186", address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
     { name: "Brisbane (Head Office)", phone: "+61 7 3270 7999", email: "information@uandiedu.com", address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia" },
     { name: "Melbourne", phone: "+61 3 9639 6148", address: "Suite 202, Level 2, 517 Flinders Lane, Melbourne VIC 3000, Australia" },
     { name: "Gold Coast", phone: "+61 421 000 060", address: "Level 1, Southport Central Commercial Tower 2, 2106/5 Lawson St., Southport QLD 4215, Australia" },
@@ -597,8 +693,8 @@ export const footer = {
     email: "information@uandiedu.com",
     /** Thai office lines, shown in the top bar and footer. */
     phones: [
-      { number: "081-116-5186", area: "Bangkok" },
-      { number: "099-921-5899", area: "Chiang Mai" },
+      { number: "+66 81-116-5186", area: "Bangkok" },
+      { number: "+66 99-921-5899", area: "Chiang Mai" },
     ],
     address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia",
   },
