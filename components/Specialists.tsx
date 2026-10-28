@@ -12,9 +12,9 @@ export default function Specialists() {
     <section id="specialists" className="bg-[linear-gradient(180deg,#F5FBFF_0%,#E1F3EC_100%)] py-20 md:py-[88px]">
       <Container>
         <SectionHeader title={specialists.title} subtitle={specialists.subtitle} />
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-7">
           {specialists.items.map((s, i) => (
-            <Reveal key={s.photo} delay={(i % 3) * 0.06}>
+            <Reveal key={s.photo} delay={(i % 3) * 0.06} className="w-full sm:w-[calc(50%-14px)] lg:w-[calc((100%-56px)/3)]">
               <article className="flex h-full flex-col overflow-hidden rounded-[26px] bg-white shadow-[0_10px_24px_rgba(13,31,58,.12)]">
                 <div className="relative h-[300px] overflow-hidden bg-sky">
                   <div aria-hidden="true" className="absolute -left-10 top-10 h-24 w-56 rounded-full bg-white/30 blur-2xl" />

@@ -29,7 +29,7 @@ export function FinalCta() {
               src={form.embed}
               title={form.title}
               loading="lazy"
-              className="block h-[1500px] w-full border-0 md:h-[1350px]"
+              className="block h-[1120px] w-full border-0 sm:h-[980px] md:h-[940px]"
             />
           </div>
           <a href={form.url} target="_blank" rel="noopener noreferrer" className="mt-4 text-sm text-white/85 underline underline-offset-4 hover:text-white">

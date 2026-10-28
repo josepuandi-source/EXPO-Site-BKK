@@ -187,15 +187,35 @@ export const dates = {
 // ---------------------------------------------------------------------------
 export const whyAttend = {
   title: "Why Attend the Expo?",
-  text: "Take the next step towards your future in Australia. Meet representatives from Australian universities, TAFEs, colleges, and English language schools. Plus free migration counselling.",
-  /** icon: "users" | "shield" | "dollar" | "clipboard" */
+  text: "Talk directly with Australian schools, the U&I team and people living in Australia, all in one afternoon.",
+  /** icon: "globe" | "users" | "home" */
   items: [
-    { icon: "users", title: "1-on-1 Counselling", sub: "with School Representatives" },
-    { icon: "shield", title: "Free Migration", sub: "Counselling" },
-    { icon: "dollar", title: "Scholarship", sub: "Opportunities" },
-    { icon: "clipboard", title: "On-the-Spot", sub: "Assessments" },
-  ] as { icon: "users" | "shield" | "dollar" | "clipboard"; title: string; sub: string }[],
+    { icon: "globe", photo: "/images/why/consult-rep.webp", title: "Meet Australian schools in person", sub: "TAFEs and leading Australian institutions, all under one roof" },
+    { icon: "users", photo: "/images/why/consult-team.webp", title: "1-on-1 with the U&I team", sub: "Experienced advisers to plan your study and visa" },
+    { icon: "home", photo: "/images/why/crowd-talks.webp", title: "Real stories from Australia", sub: "Tips from U&I staff who actually live there" },
+  ] as { icon: "globe" | "users" | "home"; photo: string; title: string; sub: string }[],
+  /** Crowd shots from past U&I EXPOs, shown as a strip under the reasons. */
+  photos: [
+    { src: "/images/why/crowd-hall.webp", alt: "A packed U&I EXPO hall" },
+    { src: "/images/why/crowd-tables.webp", alt: "Students consulting with schools at a U&I EXPO" },
+    { src: "/images/why/consult-rows.webp", alt: "Rows of 1-on-1 consultations at a U&I EXPO" },
+  ],
+  topicsTitle: "Ask us about",
+  topics: [
+    "Work and Holiday: visa, short courses, jobs and housing",
+    "Short courses & summer programs",
+    "English for everyday life, business or degree study",
+    "Skills-shortage careers for your future in Australia",
+    "Bachelor's, Master's and PhD",
+  ],
+  promo: {
+    title: "Register early for a chance to win a free flight!",
+    note: "*Flight draw for pre-registered guests only, conditions apply.",
+    cta: "Register free",
+    tagline: "Planning to go to Australia in 2027? Don't miss this one.",
+  },
 };
+
 
 // ---------------------------------------------------------------------------
 // Pathways
@@ -308,6 +328,12 @@ export const specialists = {
       photo: "/images/specialists/titi.webp",
       branch: "Brisbane office",
       points: ["Knows vocational and degree pathways", "Specialist in studying in Australia", "Free help planning your study and visa"],
+    },
+    {
+      name: "P'Irene",
+      photo: "/images/specialists/irene-full.webp",
+      branch: "Brisbane office",
+      points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],
     },
   ],
 };

@@ -23,17 +23,18 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <Header />
       <main>
         <Hero />
+        <WhyAttend />
         <Specials />
+        <FinalCta />
         <Schools />
         <Specialists />
-        <FinalCta />
-        <Dates />
-        <WhyAttend />
-        <Testimonials />
-        <Videos />
-        <About />
         <Partner />
+        <About />
         <Move />
+        <Testimonials />
+        {/* Previous EXPO highlights */}
+        <Videos />
+        <Dates />
         <PhotoStrip />
         <Offices />
       </main>
