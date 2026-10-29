@@ -764,9 +764,8 @@ export const footer = {
       { number: "+66 81-116-5186", area: "Bangkok" },
       { number: "+66 99-921-5899", area: "Chiang Mai" },
     ],
-    address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia",
-    /** Brisbane head office line(s), shown in the footer next to its address. */
-    officePhones: [{ number: "+61 7 3270 7999", area: "Brisbane" }],
+    /** Bangkok office address, shown in the footer. */
+    address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand",
   },
   copyright: "© 2026 U&I Global. All rights reserved.",
   privacyHref: "#",

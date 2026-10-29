@@ -130,7 +130,7 @@ export function Footer() {
                   <MailIcon className="h-4 w-4 shrink-0" />
                   {footer.contact.email}
                 </a>
-                {footer.contact.officePhones.map((p) => (
+                {footer.contact.phones.map((p) => (
                   <a key={p.number} href={tel(p.number)} className="flex items-center gap-2.5 hover:text-white hover:underline">
                     <PhoneIcon className="h-4 w-4 shrink-0" />
                     {p.number} ({p.area})
