@@ -315,6 +315,8 @@ export const specialists = {
     {
       name: "P'Aew",
       photo: "/images/specialists/aew.webp",
+      // Her cut-out is framed wider than the others; scale up so she matches
+      photoClassName: "scale-110 origin-top",
       background: "/images/specialists/bg/bangkok.webp",
       line: line.bangkok,
       branch: "Consultant, Bangkok office",
@@ -368,7 +370,7 @@ export const specialists = {
       branch: "Brisbane & Gold Coast office",
       points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],
     },
-  ] as { name: string; photo: string; line: string; branch: string; points: string[]; background?: string }[],
+  ] as { name: string; photo: string; line: string; branch: string; points: string[]; background?: string; photoClassName?: string }[],
 };
 
 // ---------------------------------------------------------------------------

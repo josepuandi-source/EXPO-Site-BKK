@@ -40,7 +40,7 @@ export default function Specialists() {
                     width={590}
                     height={900}
                     sizes="(min-width: 640px) 270px, 160px"
-                    className="absolute -bottom-16 left-1/2 h-[250px] w-auto max-w-none -translate-x-1/2 drop-shadow-[0_8px_16px_rgba(13,31,58,.25)] sm:-bottom-24 sm:h-[400px] lg:-bottom-20 lg:h-[350px]"
+                    className={`absolute left-1/2 top-3 h-[240px] w-auto max-w-none -translate-x-1/2 drop-shadow-[0_8px_16px_rgba(13,31,58,.25)] sm:top-5 sm:h-[380px] lg:top-4 lg:h-[310px] ${s.photoClassName ?? ""}`}
                   />
                   <div aria-hidden="true" className="absolute inset-x-0 bottom-0 hidden h-16 bg-gradient-to-t from-white/90 to-transparent sm:block" />
                 </div>
