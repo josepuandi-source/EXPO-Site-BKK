@@ -314,9 +314,7 @@ export const specialists = {
   items: [
     {
       name: "P'Aew",
-      photo: "/images/specialists/aew.webp",
-      // Her cut-out is framed wider than the others; scale up so she matches
-      photoClassName: "scale-110 origin-top",
+      photo: "/images/specialists/aew-tee.webp",
       background: "/images/specialists/bg/bangkok.webp",
       line: line.bangkok,
       branch: "Consultant, Bangkok office",
@@ -324,7 +322,7 @@ export const specialists = {
     },
     {
       name: "P'Fern",
-      photo: "/images/specialists/fern.webp",
+      photo: "/images/specialists/fern-tee.webp",
       background: "/images/specialists/bg/bangkok.webp",
       line: line.bangkok,
       branch: "Consultant, Bangkok office",
@@ -332,7 +330,7 @@ export const specialists = {
     },
     {
       name: "P'Mookie",
-      photo: "/images/specialists/mookie.webp",
+      photo: "/images/specialists/mookie-tee.webp",
       background: "/images/specialists/bg/bangkok.webp",
       line: line.bangkok,
       branch: "Counsellor, Bangkok office",
@@ -340,7 +338,7 @@ export const specialists = {
     },
     {
       name: "P'Blue",
-      photo: "/images/specialists/blue.webp",
+      photo: "/images/specialists/blue-tee.webp",
       background: "/images/specialists/bg/chiangmai.webp",
       line: line.bangkok,
       branch: "Consultant, Chiang Mai office",
@@ -370,7 +368,7 @@ export const specialists = {
       branch: "Brisbane & Gold Coast office",
       points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],
     },
-  ] as { name: string; photo: string; line: string; branch: string; points: string[]; background?: string; photoClassName?: string }[],
+  ] as { name: string; photo: string; line: string; branch: string; points: string[]; background?: string }[],
 };
 
 // ---------------------------------------------------------------------------
