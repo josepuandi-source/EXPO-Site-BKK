@@ -83,6 +83,8 @@ export const hero = {
     mapEmbed: "https://maps.google.com/maps?q=Novotel+Bangkok+on+Siam+Square,+392%2F44+Siam+Square+Soi+6,+Bangkok+10330&z=16&output=embed",
     mapLabel: "Open in Google Maps",
   },
+  /** Trust line along the bottom of the hero. */
+  trust: ["Australia State Government Official Agent", "Since 1997 · 29 Years Experience & Trust"],
   titleLead: "Your Pathway to Australia",
   titleHighlight: "Starts Here",
   intro:

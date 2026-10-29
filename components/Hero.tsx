@@ -112,6 +112,14 @@ export default function Hero() {
           <Image src={`${ART}/student.webp`} alt="" width={1100} height={1730} priority sizes="(min-width: 1024px) 470px, 360px" className="h-auto w-full" />
         </motion.div>
       </div>
+
+      {/* Trust line along the bottom, over the skyline */}
+      <div className="relative z-10 bg-[linear-gradient(90deg,rgba(13,31,58,.82),rgba(13,31,58,.55)_60%,rgba(13,31,58,0))] text-white lg:absolute lg:bottom-0 lg:left-0 lg:w-[60%]">
+        <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6 lg:px-8 lg:text-left">
+          <p className="font-heading text-[15px] font-semibold leading-snug md:text-[17px]">{hero.trust[0]}</p>
+          <p className="text-[13px] leading-snug text-white/85 md:text-[15px]">{hero.trust[1]}</p>
+        </div>
+      </div>
     </section>
   );
 }
