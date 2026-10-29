@@ -59,7 +59,7 @@ export default function Hero() {
       {/* Official-agent award, top right: just the gold seal until hovered or tapped, then a banner
           unrolls out of its right side (per JM's sketch). Scrolling the page rolls it back up. */}
       <motion.div
-        className="absolute right-3 top-3 z-20 sm:right-6 sm:top-5 lg:right-8 lg:top-7"
+        className="absolute right-5 top-3 z-20 sm:right-10 sm:top-5 lg:right-14 lg:top-7"
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.5 }}
