@@ -94,7 +94,7 @@ function FeaturedEvent({ e }: { e: Event }) {
   const show = () => e.poster && openPoster({ src: e.poster, alt: `${e.city} ${ui.posterAlt}` });
   return (
     <div className="relative flex min-h-[360px] overflow-hidden rounded-2xl bg-bar text-white">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-2xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-36 -top-36 h-[24rem] w-[24rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.1),transparent)]" />
       <div className="relative grid w-full grid-cols-1 items-center gap-6 p-7 sm:grid-cols-[1fr_auto] md:p-8">
         <div className="flex flex-col items-start gap-3">
           <CalendarBadge when={e.when} onTeal />

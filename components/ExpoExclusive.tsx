@@ -10,8 +10,8 @@ export default function ExpoExclusive() {
   if (!x) return null;
   return (
     <section id="expo-exclusive" className="relative overflow-hidden bg-bar py-20 md:py-24">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-24 -top-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-      <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-navy-900/20 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-48 h-[32rem] w-[32rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.1),transparent)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-56 -right-16 h-[36rem] w-[36rem] bg-[radial-gradient(closest-side,rgba(13,31,58,.2),transparent)]" />
       <Container>
         <Reveal>
           <div className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">

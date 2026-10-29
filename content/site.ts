@@ -315,7 +315,7 @@ export const specialists = {
     {
       name: "P'Aew",
       photo: "/images/specialists/aew-tee.webp",
-      background: "/images/specialists/bg/bangkok.webp",
+      background: "/images/specialists/bg/bangkok-soft.webp",
       line: line.bangkok,
       branch: "Consultant, Bangkok office",
       points: ["Specialist in English-language study plans", "ILSC and Greystone alumna", "Check, be sure, then lodge your visa"],
@@ -323,7 +323,7 @@ export const specialists = {
     {
       name: "P'Fern",
       photo: "/images/specialists/fern-tee.webp",
-      background: "/images/specialists/bg/bangkok.webp",
+      background: "/images/specialists/bg/bangkok-soft.webp",
       line: line.bangkok,
       branch: "Consultant, Bangkok office",
       points: ["English study plans in Australia", "ILSC and Greenwich alumna", "Not sure how to find work or a place to live? Ask away!"],
@@ -331,7 +331,7 @@ export const specialists = {
     {
       name: "P'Mookie",
       photo: "/images/specialists/mookie-tee.webp",
-      background: "/images/specialists/bg/bangkok.webp",
+      background: "/images/specialists/bg/bangkok-soft.webp",
       line: line.bangkok,
       branch: "Counsellor, Bangkok office",
       points: ["Visa plans: Work & Holiday, work and visa extensions", "Degree study with scholarships of over 100%", "Summer courses in the school break, made easy"],
@@ -339,7 +339,7 @@ export const specialists = {
     {
       name: "P'Blue",
       photo: "/images/specialists/blue-tee.webp",
-      background: "/images/specialists/bg/chiangmai.webp",
+      background: "/images/specialists/bg/chiangmai-soft.webp",
       line: line.bangkok,
       branch: "Consultant, Chiang Mai office",
       points: ["Over 7 years of student counselling", "Study plans for Australia & New Zealand", "Full support from application to visa"],
@@ -347,7 +347,7 @@ export const specialists = {
     {
       name: "P'Inez",
       photo: "/images/specialists/inez.webp",
-      background: "/images/specialists/bg/melbourne.webp",
+      background: "/images/specialists/bg/melbourne-soft.webp",
       line: line.melbourne,
       branch: "Melbourne office",
       points: ["Degree study plans", "Experienced with 485 visa applications", "RMIT alumna, a top 3 Melbourne university"],
@@ -355,7 +355,7 @@ export const specialists = {
     {
       name: "P'Titi",
       photo: "/images/specialists/titi.webp",
-      background: "/images/specialists/bg/goldcoast.webp",
+      background: "/images/specialists/bg/goldcoast-soft.webp",
       line: line.brisbane,
       branch: "Brisbane & Gold Coast office",
       points: ["Knows vocational and degree pathways", "Specialist in studying in Australia", "Free help planning your study and visa"],
@@ -363,7 +363,7 @@ export const specialists = {
     {
       name: "P'Irene",
       photo: "/images/specialists/irene-full.webp",
-      background: "/images/specialists/bg/brisbane.webp",
+      background: "/images/specialists/bg/brisbane-soft.webp",
       line: line.brisbane,
       branch: "Brisbane & Gold Coast office",
       points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],

@@ -18,8 +18,8 @@ export default function Specials() {
   const { specials, hero } = useContent();
   return (
     <section id="specials" className="relative overflow-hidden bg-[linear-gradient(180deg,#4BA8DA_0%,#8FCBEE_55%,#D7EEFA_100%)] pb-12 pt-10 sm:pb-16 sm:pt-14 md:pb-20">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-24 h-40 w-[30rem] rounded-full bg-white/25 blur-3xl" />
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-[55%] h-40 w-[26rem] rounded-full bg-white/30 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-16 h-64 w-[38rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.25),transparent)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-[50%] h-64 w-[34rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.3),transparent)]" />
       <Container className="relative">
         <Reveal>
           <h2 className="mx-auto max-w-5xl rounded-full bg-primary-700 px-5 py-3 sm:px-6 sm:py-3.5 text-center font-heading text-[clamp(20px,3.2vw,40px)] font-semibold leading-tight text-white shadow-[0_8px_20px_rgba(0,90,72,.3)]">

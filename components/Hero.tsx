@@ -45,9 +45,9 @@ export default function Hero() {
     <section id="hero" className="relative overflow-hidden bg-sky text-white">
       {/* Clouds */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[8%] top-[18%] h-40 w-[28rem] rounded-full bg-white/25 blur-3xl" />
-        <div className="absolute left-[30%] top-[55%] h-32 w-[22rem] rounded-full bg-white/20 blur-3xl" />
-        <div className="absolute -right-20 top-[48%] h-44 w-[26rem] rounded-full bg-white/20 blur-3xl" />
+        <div className="absolute right-[4%] top-[12%] h-64 w-[36rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.25),transparent)]" />
+        <div className="absolute left-[26%] top-[50%] h-56 w-[30rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.2),transparent)]" />
+        <div className="absolute -right-36 top-[42%] h-72 w-[34rem] bg-[radial-gradient(closest-side,rgba(255,255,255,.2),transparent)]" />
       </div>
       <Clouds />
 

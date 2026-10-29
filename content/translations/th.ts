@@ -199,7 +199,7 @@ const th: Record<string, string> = {
   "Customer Reference Number. Your gateway to Medicare and government services.": "หมายเลขอ้างอิงลูกค้า (Customer Reference Number) สำหรับใช้บริการ Medicare และบริการของรัฐ",
 
   // Testimonials
-  "What Our Students Say": "เสียงจากนักเรียนของเรา",
+  "What Our Students Say": "นักเรียนของเรา",
   "Real stories from students who achieved their Australian dream.": "เรื่องจริงจากนักเรียนที่ทำความฝันในออสเตรเลียสำเร็จ",
   "Service": "บริการ",
   "Consultant": "ที่ปรึกษา",

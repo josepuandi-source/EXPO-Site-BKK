@@ -29,18 +29,16 @@ export default function Specialists() {
               >
                 <div className="relative min-h-[180px] w-[38%] shrink-0 overflow-hidden bg-sky sm:h-[300px] sm:w-auto lg:h-[260px]">
                   {s.background && (
-                    // Their city, softened and dimmed so the cut-out stays the focus
-                    <Image src={s.background} alt="" fill sizes="(min-width: 640px) 380px, 160px" className="scale-110 object-cover opacity-75 blur-[3px]" />
+                    // Their city, dimmed so the cut-out stays the focus (the blur is baked into the file: a CSS blur flickers on phones)
+                    <Image src={s.background} alt="" fill sizes="(min-width: 640px) 380px, 160px" className="object-cover opacity-75" />
                   )}
-                  <div aria-hidden="true" className="absolute -left-10 top-10 h-24 w-56 rounded-full bg-white/30 blur-2xl" />
-                  <div aria-hidden="true" className="absolute -right-8 top-24 h-20 w-48 rounded-full bg-white/25 blur-2xl" />
                   <Image
                     src={s.photo}
                     alt={s.name}
                     width={590}
                     height={900}
                     sizes="(min-width: 640px) 270px, 160px"
-                    className="absolute left-1/2 top-3 h-[240px] w-auto max-w-none -translate-x-1/2 drop-shadow-[0_8px_16px_rgba(13,31,58,.25)] sm:top-5 sm:h-[380px] lg:top-4 lg:h-[310px]"
+                    className="absolute left-1/2 top-3 h-[240px] min-h-[calc(100%-0.75rem)] w-auto max-w-none -translate-x-1/2 drop-shadow-[0_8px_16px_rgba(13,31,58,.25)] sm:top-5 sm:h-[380px] lg:top-4 lg:h-[310px]"
                   />
                   <div aria-hidden="true" className="absolute inset-x-0 bottom-0 hidden h-16 bg-gradient-to-t from-white/90 to-transparent sm:block" />
                 </div>

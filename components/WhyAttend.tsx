@@ -13,8 +13,9 @@ export default function WhyAttend() {
   const { promo } = whyAttend;
   return (
     <section id="why-attend" className="relative overflow-hidden bg-[linear-gradient(180deg,#F5FBFF_0%,#FFFFFF_100%)] py-20 md:py-[88px]">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-16 h-56 w-[28rem] rounded-full bg-sky-300/20 blur-3xl" />
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-10 h-56 w-[28rem] rounded-full bg-primary-300/20 blur-3xl" />
+      {/* Soft glows drawn as gradients: a CSS blur here flickers on phones while the cards animate in */}
+      <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-0 h-96 w-[40rem] bg-[radial-gradient(closest-side,rgba(125,211,252,.2),transparent)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 -bottom-6 h-96 w-[40rem] bg-[radial-gradient(closest-side,rgba(142,220,196,.25),transparent)]" />
       <Container className="relative">
         <SectionHeader title={whyAttend.title} subtitle={whyAttend.text} />
 
