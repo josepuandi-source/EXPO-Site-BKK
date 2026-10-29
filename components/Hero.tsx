@@ -54,11 +54,11 @@ export default function Hero() {
         transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.5 }}
       >
         <div className="group relative">
-          {/* Credentials card: grows out from behind the seal, leaving room for it in the corner */}
+          {/* Credentials card: pops up underneath the seal */}
           <div
             role="tooltip"
             id="trust-card"
-            className="pointer-events-none absolute right-0 top-0 w-[min(330px,calc(100vw-1.5rem))] origin-top-right scale-50 rounded-2xl bg-white/95 py-4 pl-4 pr-[96px] text-navy-900 opacity-0 shadow-[0_16px_40px_rgba(13,31,58,.3)] ring-1 ring-[#E0B93A]/60 backdrop-blur transition-all duration-300 ease-out group-focus-within:pointer-events-auto group-focus-within:scale-100 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100 lg:w-[380px] lg:py-5 lg:pl-5 lg:pr-[112px]"
+            className="pointer-events-none absolute right-0 top-full mt-2 before:absolute before:inset-x-0 before:-top-2 before:h-2 before:content-[''] w-[min(320px,calc(100vw-1.5rem))] origin-top-right -translate-y-2 scale-75 rounded-2xl bg-white/95 p-4 text-navy-900 opacity-0 shadow-[0_16px_40px_rgba(13,31,58,.3)] ring-1 ring-[#E0B93A]/60 backdrop-blur transition-all duration-300 ease-out group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:scale-100 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 lg:w-[360px] lg:p-5"
           >
             <p className="flex items-start gap-1.5 font-heading text-[14px] font-bold leading-snug text-primary-900 lg:text-[16px]">
               <ShieldCheckIcon className="mt-0.5 h-[18px] w-[18px] shrink-0 text-primary-700" />
@@ -72,12 +72,12 @@ export default function Hero() {
             type="button"
             aria-label={hero.trust[0]}
             aria-describedby="trust-card"
-            className="relative grid h-[78px] w-[78px] place-items-center rounded-full drop-shadow-[0_6px_12px_rgba(120,85,10,.45)] transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6 focus-visible:outline-none lg:h-[96px] lg:w-[96px]"
+            className="relative grid h-[98px] w-[98px] place-items-center rounded-full drop-shadow-[0_6px_12px_rgba(120,85,10,.45)] transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6 focus-visible:outline-none lg:h-[120px] lg:w-[120px]"
           >
-            <Image src={`${ART}/seal.webp`} alt="" fill sizes="96px" className="object-contain" />
+            <Image src={`${ART}/seal.webp`} alt="" fill sizes="120px" className="object-contain" />
             <span className="relative flex flex-col items-center leading-none text-[#6B4A0C] [text-shadow:0_1px_0_rgba(255,255,255,.55)]">
-              <span className="font-heading text-[26px] font-extrabold lg:text-[32px]">{hero.trustSeal.number}</span>
-              <span className="mt-0.5 text-[13px] font-bold uppercase tracking-wider lg:text-[15px]">{hero.trustSeal.label}</span>
+              <span className="font-heading text-[32px] font-extrabold lg:text-[40px]">{hero.trustSeal.number}</span>
+              <span className="mt-0.5 text-[16px] font-bold uppercase tracking-wider lg:text-[19px]">{hero.trustSeal.label}</span>
             </span>
           </button>
         </div>
