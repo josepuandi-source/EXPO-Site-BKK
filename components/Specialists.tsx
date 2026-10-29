@@ -6,7 +6,8 @@ import { Container, Reveal, SectionHeader } from "./ui";
 import { CheckIcon } from "./icons";
 
 /**
- * The U&I specialists at the EXPO: cut-out photo on a poster-style sky, name tab and three check points.
+ * The U&I specialists at the EXPO: cut-out photo on a poster-style sky (or a soft photo of their city),
+ * name tab and three check points. Each card opens their branch's LINE account to book a consultation.
  * On phones each card lies on its side (photo left, details right) to keep the list short.
  */
 export default function Specialists() {
@@ -18,8 +19,18 @@ export default function Specialists() {
         <div className="flex flex-wrap justify-center gap-4 sm:gap-7">
           {specialists.items.map((s, i) => (
             <Reveal key={s.photo} delay={(i % 3) * 0.06} className="w-full sm:w-[calc(50%-14px)] lg:w-[calc((100%-56px)/3)]">
-              <article className="flex h-full overflow-hidden rounded-[22px] bg-white shadow-[0_10px_24px_rgba(13,31,58,.12)] sm:flex-col sm:rounded-[26px]">
+              <a
+                href={s.line}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${s.name} – ${specialists.bookLabel}`}
+                className="group flex h-full overflow-hidden rounded-[22px] bg-white shadow-[0_10px_24px_rgba(13,31,58,.12)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(13,31,58,.2)] focus-visible:-translate-y-1 sm:flex-col sm:rounded-[26px]"
+              >
                 <div className="relative min-h-[180px] w-[38%] shrink-0 overflow-hidden bg-sky sm:h-[300px] sm:w-auto">
+                  {s.background && (
+                    // Their city, softened and dimmed so the cut-out stays the focus
+                    <Image src={s.background} alt="" fill sizes="(min-width: 640px) 380px, 160px" className="scale-110 object-cover opacity-75 blur-[3px]" />
+                  )}
                   <div aria-hidden="true" className="absolute -left-10 top-10 h-24 w-56 rounded-full bg-white/30 blur-2xl" />
                   <div aria-hidden="true" className="absolute -right-8 top-24 h-20 w-48 rounded-full bg-white/25 blur-2xl" />
                   <Image
@@ -47,8 +58,13 @@ export default function Specialists() {
                       </li>
                     ))}
                   </ul>
+                  <span className="mt-auto inline-flex items-center gap-2 self-start pt-4 font-heading text-[13px] font-bold text-[#06C755] sm:self-center sm:pt-5 sm:text-[15px]">
+                    <span className="grid h-6 w-6 place-items-center rounded-full bg-[#06C755] text-[9px] font-extrabold tracking-tight text-white">LINE</span>
+                    {specialists.bookLabel}
+                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                  </span>
                 </div>
-              </article>
+              </a>
             </Reveal>
           ))}
         </div>

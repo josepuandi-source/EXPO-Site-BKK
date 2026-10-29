@@ -295,53 +295,73 @@ export const specials = {
 // ---------------------------------------------------------------------------
 // Specialists — the U&I team at the Bangkok EXPO (cut-outs from their specialist cards)
 // ---------------------------------------------------------------------------
+// LINE Official Account for each branch — tapping a specialist card opens their branch's LINE to book.
+const line = {
+  bangkok: "https://tr.ee/zI4hPGPIe2",
+  brisbane: "https://tr.ee/IwbR4QR6Cm",
+  melbourne: "https://tr.ee/vR5bl8PitR",
+};
+
 export const specialists = {
   title: "Free consultation with our specialists",
   subtitle: "Meet the U&I team who will look after you at the Bangkok EXPO.",
+  /** Shown on each card as the call to book through LINE. */
+  bookLabel: "Book via LINE",
+  /**
+   * line: the branch LINE account the card opens.
+   * background: optional photo of their city, shown soft and blurred behind the cut-out.
+   */
   items: [
     {
       name: "P'Aew",
       photo: "/images/specialists/aew.webp",
+      line: line.bangkok,
       branch: "Consultant, Bangkok office",
       points: ["Specialist in English-language study plans", "ILSC and Greystone alumna", "Check, be sure, then lodge your visa"],
     },
     {
       name: "P'Fern",
       photo: "/images/specialists/fern.webp",
+      line: line.bangkok,
       branch: "Consultant, Bangkok office",
       points: ["English study plans in Australia", "ILSC and Greenwich alumna", "Not sure how to find work or a place to live? Ask away!"],
     },
     {
       name: "P'Mookie",
       photo: "/images/specialists/mookie.webp",
+      line: line.bangkok,
       branch: "Counsellor, Bangkok office",
       points: ["Visa plans: Work & Holiday, work and visa extensions", "Degree study with scholarships of over 100%", "Summer courses in the school break, made easy"],
     },
     {
       name: "P'Blue",
       photo: "/images/specialists/blue.webp",
+      line: line.bangkok,
       branch: "Consultant, Chiang Mai office",
       points: ["Over 7 years of student counselling", "Study plans for Australia & New Zealand", "Full support from application to visa"],
     },
     {
       name: "P'Inez",
       photo: "/images/specialists/inez.webp",
+      line: line.melbourne,
       branch: "Melbourne office",
       points: ["Degree study plans", "Experienced with 485 visa applications", "RMIT alumna, a top 3 Melbourne university"],
     },
     {
       name: "P'Titi",
       photo: "/images/specialists/titi.webp",
-      branch: "Brisbane office",
+      line: line.brisbane,
+      branch: "Brisbane & Gold Coast office",
       points: ["Knows vocational and degree pathways", "Specialist in studying in Australia", "Free help planning your study and visa"],
     },
     {
       name: "P'Irene",
       photo: "/images/specialists/irene-full.webp",
-      branch: "Brisbane office",
+      line: line.brisbane,
+      branch: "Brisbane & Gold Coast office",
       points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],
     },
-  ],
+  ] as { name: string; photo: string; line: string; branch: string; points: string[]; background?: string }[],
 };
 
 // ---------------------------------------------------------------------------

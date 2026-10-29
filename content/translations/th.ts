@@ -301,6 +301,8 @@ const th: Record<string, string> = {
   "Consultant, Chiang Mai office": "ที่ปรึกษาประจำสาขาเชียงใหม่",
   "Melbourne office": "ประจำสาขาเมลเบิร์น",
   "Brisbane office": "ประจำสาขาบริสเบน",
+  "Brisbane & Gold Coast office": "ประจำสาขาบริสเบน และโกลด์โคสต์",
+  "Book via LINE": "จองคิวปรึกษาผ่าน LINE",
   "Specialist in English-language study plans": "ผู้เชี่ยวชาญด้านการวางแผนเรียนภาษา",
   "ILSC and Greystone alumna": "ศิษย์เก่า สถาบัน ILSC, Greystone",
   "Check, be sure, then lodge your visa": "เช็ค ชัวร์ ก่อนยื่นวีซ่า",
