@@ -28,6 +28,11 @@ export default function Hero() {
   const { hero } = useContent();
   const d = hero.details;
   const [trustOpen, setTrustOpen] = useState(false);
+  // Unroll the award banner on its own once the seal has popped in.
+  useEffect(() => {
+    const t = window.setTimeout(() => setTrustOpen(true), 1400);
+    return () => window.clearTimeout(t);
+  }, []);
   // Roll the award banner back up as soon as the page is scrolled.
   useEffect(() => {
     if (!trustOpen) return;
