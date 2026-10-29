@@ -546,6 +546,33 @@ export const testimonials = {
       quote: "ขอบคุณ U&I ที่แนะนำและช่วยเหลืออย่างดีในความฝัน เข้าสู่การเรียน ออสเตรเลีย",
     },
     {
+      name: "Pear",
+      photo: "/images/reviews/student-pear.webp",
+      review: "/images/reviews/review-pear.webp",
+      course: "General English",
+      school: "Impact English College, Melbourne",
+      quote:
+        "เป็นการตัดสินใจที่ถูกมากๆๆๆที่ไปเรียนค่ะ ได้เพื่อนใหม่เยอะมากๆๆ คลาสเรียนดี อาจารย์ดี เพื่อนดี ไปเรียนเหมือนไปเที่ยว เลิกเรียนไปกับเพื่อนๆ เสาร์อาทิตย์ก็ได้ไปเที่ยวด้วย คิดว่าใช้เวลาได้คุ้มมากๆเลยค่ะ",
+    },
+    {
+      name: "Beam",
+      photo: "/images/reviews/student-beam.webp",
+      review: "/images/reviews/review-beam.webp",
+      course: "General English",
+      school: "Impact English College, Melbourne",
+      quote:
+        "พอรู้สึกว่าเรียนหนึ่งเดือนมันน้อยไปเลยค่ะ อยากกลับมาเรียนต่ออีก😅 ครูก็ใจดีค่ะ แต่พอเห็นเพื่อนๆทุกคนพูดได้อ่านได้หนูก็เขินๆที่ยังอ่านไม่ออก เพื่อนๆก็พยายามช่วย เดี๋ยวเรียนไปสักพักคงจะดีขึ้นค่ะ จบคราวเมื่อวานเค้าก็เรียกคุยบอกหนูไม่ต้องเครียดเพราะพึ่งมา แต่ก็เครียดอยู่ดี555 อาจจะเป็นเพราะว่าไม่ได้เรียนนานแล้ว เหมือนมาเริ่มจูนกับตัวเองใหม่🤣🤣",
+    },
+    {
+      name: "Sand",
+      photo: "/images/reviews/student-sand.webp",
+      review: "/images/reviews/review-sand.webp",
+      course: "Bachelor of Social Science",
+      school: "The University of Queensland",
+      quote:
+        "แซนว่า UQ เป็นมหาลัยที่เหมาะสมกับชื่อเสียง ตัวสถานที่และ facility ดีมาก ส่วนตัวชอบระบบการเรียนและอาจารย์ที่สอนมากกว่าที่ไทย ตัวเมืองเองก็ดี ความปลอดภัยประมาณ 8/10 อาหารอร่อยแต่แพง คำว่าแพงจะถูกใช้บ่อยเวลามาที่นี่ คนส่วนใหญ่เน้นออกกำลังกายตอนเช้า แล้วเที่ยวตอนเย็น ภาพรวมเป็นเมืองที่น่ามาเรียน แนะนำให้มาลองครับ😁",
+    },
+    {
       name: "นิกกี้",
       photo: "/images/reviews/student-7-v2.webp",
       review: "/images/reviews/review-7.webp",
@@ -600,6 +627,32 @@ export const testimonials = {
       name: "Saisuda Pamaungmoon",
       quote:
         "ขอบคุณพี่อิ๋วและทีมงานเอเจ้นซี่ทุกคนมากนะคะ ที่คอยดูแลและให้คำแนะนำตั้งแต่การเลือกเมือง การเตรียมเอกสาร ไปจนถึงการยื่นวีซ่า รวมถึงตอบทุกข้อสงสัยและให้คำปรึกษาในทุกขั้นตอน จนวันนี้วีซ่าผ่านเรียบร้อยแล้ว 😊\n\nประทับใจในการดูแลและความใส่ใจของทีมงานมากค่ะ แนะนำเลยสำหรับใครที่กำลังมองหาเอเจ้นซี่ดี ๆ ขอบคุณอีกครั้งนะคะ 🙏",
+    },
+    {
+      name: "Win",
+      course: "English program + Master of Professional Engineering",
+      school: "Monash College + Monash University",
+      quote:
+        "บรรยากาศดีมากครับ ทั้งแคมปัส Caulfield และ Clayton เลย Australia เค้าทำอะไรๆ มักจะเซ็ทเป็นระบบไว้หมด เว็บ/Moodle/ไดร์ฟ ที่ใช้ในการเรียน มีฟังก์ชั่นที่ต้องใช้ค่อนข้างเยอะ พยายามเรียนรู้และจดจำอยู่ครับ ตื่นเต้น แล้วก็เกร็งๆ นิดหน่อยครับ",
+    },
+    {
+      name: "Dung",
+      course: "English program + Master of Professional Engineering",
+      school: "Curtin College + Curtin University",
+      quote: "ขอบคุณพี่มุกมากๆนะคับ ถ้าไม่มีพี่มุกผมน่าจะตื้อไปหมดเลย😂",
+    },
+    {
+      name: "Mind",
+      course: "Cert IV + Diploma of Hospitality Management",
+      school: "QAT, Brisbane",
+      quote:
+        "ขอบคุณพี่ไอรีนที่ช่วยดูแลเรื่องวีซ่า เพราะกำลังจะเปลี่ยน Work and Holiday ปีที่ 3 เป็นนักเรียน เลยค่อนข้างกังวล แต่ก็วีซ่าผ่านแล้วว ส่วนโรงเรียน เริ่มเรียนแล้วค่ะ เรียนแบบเข้มข้นจริงๆ ได้เข้าครัวแบบปฏิบัติจริงเลย",
+    },
+    {
+      name: "Meen",
+      course: "Barista (2 weeks)",
+      school: "Lexis, Brisbane",
+      quote: "เรียนสนุกดีค่ะ ได้เพื่อนใหม่ และได้ฝึกทำกาแฟเยอะกว่าที่คิดไว้เยอะเลย",
     },
   ] as {
     name: string;

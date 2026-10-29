@@ -21,7 +21,7 @@ type Review = ReturnType<typeof useContent>["testimonials"]["items"][number];
 const FIRST = 8; // cards shown before "See more reviews"
 
 /** Label/value lines under the name: course and school, or service and consultant. */
-function Facts({ t }: { t: Review }) {
+function Facts({ t, compact = false }: { t: Review; compact?: boolean }) {
   const { labels } = useContent().testimonials;
   const rows = [
     [labels.course, t.course],
@@ -30,9 +30,9 @@ function Facts({ t }: { t: Review }) {
     [labels.consultant, t.consultant],
   ].filter((r): r is [string, string] => Boolean(r[1]));
   return (
-    <dl className="mt-2 space-y-0.5 text-[15px] text-navy-700">
+    <dl className={`mt-2 space-y-0.5 text-navy-700 ${compact ? "text-[12.5px] leading-snug sm:text-[15px]" : "text-[15px]"}`}>
       {rows.map(([k, v]) => (
-        <div key={k}>
+        <div key={k} className={compact ? "line-clamp-2" : undefined}>
           <dt className="inline font-medium">{k}: </dt>
           <dd className="inline">{v}</dd>
         </div>
@@ -79,7 +79,14 @@ function ReviewDialog({ t, onClose }: { t: Review; onClose: () => void }) {
         </button>
         {t.review ? (
           <div className="relative w-full bg-neutral-100">
-            <Image src={t.review} alt={`${labels.source}: ${t.name}`} width={940} height={788} sizes="(min-width: 768px) 768px, 100vw" className="h-auto w-full" />
+            <Image
+              src={t.review}
+              alt={`${labels.source}: ${t.name}`}
+              width={940}
+              height={788}
+              sizes="(min-width: 768px) 768px, 100vw"
+              className="mx-auto h-auto max-h-[calc(100dvh-2rem)] w-auto max-w-full"
+            />
           </div>
         ) : (
           <>
@@ -105,25 +112,27 @@ function ReviewCards() {
   const [open, setOpen] = useState<Review | null>(null);
   const [all, setAll] = useState(false);
   const close = useCallback(() => setOpen(null), []);
-  const shown = all ? testimonials.items : testimonials.items.slice(0, FIRST);
+  // Reviews without a photo stay in the content but are not shown for now.
+  const items = testimonials.items.filter((t) => t.photo);
+  const shown = all ? items : items.slice(0, FIRST);
   return (
     <>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-6 lg:grid-cols-4">
         {shown.map((t, i) => (
           <Reveal key={t.name} delay={(i % 4) * 0.06}>
             <article className="flex h-full flex-col">
               <div className="relative aspect-square overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(13,31,58,.14)]">
-                <Avatar t={t} sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw" />
+                <Avatar t={t} sizes="(min-width: 1024px) 280px, 45vw" />
               </div>
-              <div className="flex flex-1 flex-col px-1 pt-4">
+              <div className="flex flex-1 flex-col px-0.5 pt-3 sm:px-1 sm:pt-4">
                 <Stars />
-                <h3 className="mt-1.5 font-heading text-xl font-semibold text-navy-900">{t.name}</h3>
-                <Facts t={t} />
-                <p className="mb-5 mt-3 line-clamp-3 text-[15px] leading-relaxed text-navy-700/80">“{t.quote}”</p>
+                <h3 className="mt-1 font-heading text-base font-semibold leading-tight text-navy-900 sm:mt-1.5 sm:text-xl">{t.name}</h3>
+                <Facts t={t} compact />
+                <p className="mb-4 mt-2 line-clamp-2 text-[13px] leading-relaxed text-navy-700/80 sm:mb-5 sm:mt-3 sm:line-clamp-3 sm:text-[15px]">“{t.quote}”</p>
                 <button
                   type="button"
                   onClick={() => setOpen(t)}
-                  className="mx-auto mt-auto inline-flex min-h-11 items-center rounded-full border-2 border-primary-700 px-7 font-heading text-base font-medium text-primary-700 transition-colors hover:bg-primary-700 hover:text-white"
+                  className="mx-auto mt-auto inline-flex min-h-10 items-center rounded-full border-2 border-primary-700 px-4 font-heading text-sm font-medium text-primary-700 transition-colors hover:bg-primary-700 hover:text-white sm:min-h-11 sm:px-7 sm:text-base"
                 >
                   {labels.readMore}
                 </button>
@@ -132,14 +141,14 @@ function ReviewCards() {
           </Reveal>
         ))}
       </div>
-      {testimonials.items.length > FIRST && (
+      {items.length > FIRST && (
         <div className="mt-10 flex justify-center">
           <button
             type="button"
             onClick={() => setAll((v) => !v)}
             className="inline-flex min-h-12 items-center rounded-2xl bg-primary-700 px-8 font-heading text-lg font-medium text-white shadow-[0_8px_18px_rgba(0,90,72,.25)] transition-transform hover:-translate-y-0.5"
           >
-            {all ? labels.showLess : `${labels.showMore} (${testimonials.items.length - FIRST})`}
+            {all ? labels.showLess : `${labels.showMore} (${items.length - FIRST})`}
           </button>
         </div>
       )}
