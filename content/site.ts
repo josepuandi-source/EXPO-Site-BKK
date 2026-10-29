@@ -83,8 +83,11 @@ export const hero = {
     mapEmbed: "https://maps.google.com/maps?q=Novotel+Bangkok+on+Siam+Square,+392%2F44+Siam+Square+Soi+6,+Bangkok+10330&z=16&output=embed",
     mapLabel: "Open in Google Maps",
   },
-  /** Trust line along the bottom of the hero. */
+  /** City name under the EXPO logo. */
+  city: "Bangkok",
+  /** Trust badge in the top-right corner of the hero: seal (years) + two lines. */
   trust: ["Australia State Government Official Agent", "Since 1997 · 29 Years Experience & Trust"],
+  trustSeal: { number: "29", label: "Years" },
   titleLead: "Your Pathway to Australia",
   titleHighlight: "Starts Here",
   intro:
@@ -724,17 +727,23 @@ export const offices = {
   title: "Our Offices",
   subtitle: "Get in touch with the U&I Global team in your region.",
   items: [
-    { name: "Bangkok (Thailand)", phones: [{ number: "+66 81-116-5186", area: "Bangkok" }, { number: "+66 99-921-5899", area: "Chiang Mai" }], address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
+    { name: "Bangkok (Thailand)", phones: [{ number: "+66 81-116-5186", area: "Bangkok" }, { number: "+66 99-921-5899", area: "Chiang Mai" }], email: "information@uandiedu.com", address: "Samyan Mitrtown Office Tower, Floor 24, Mitrtown Office, 944 Rama IV Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand" },
     { name: "Brisbane (Head Office)", phone: "+61 7 3270 7999", email: "information@uandiedu.com", address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia" },
-    { name: "Melbourne", phone: "+61 3 9639 6148", address: "Suite 202, Level 2, 517 Flinders Lane, Melbourne VIC 3000, Australia" },
-    { name: "Gold Coast", phone: "+61 421 000 060", address: "Level 1, Southport Central Commercial Tower 2, 2106/5 Lawson St., Southport QLD 4215, Australia" },
-    { name: "Seoul (Korea)", phone: "+82 10 4008 5126", address: "Digitally integrated operational office managed by U&I staff" },
-    { name: "Busan (Korea)", phone: "+82 10 4008 5126", address: "Level 9, 694 Jungang-daero, Busanjin-gu, Busan, Korea, 47216" },
-    { name: "Davao (Philippines)", address: "2nd Floor, Lucita Building, P. Sobrecarey St corner Lapu-Lapu St, Davao City, 8000" },
-    { name: "Cebu (Philippines)", address: "Digitally integrated operational office managed by U&I staff" },
-    { name: "Iloilo (Philippines)", address: "Digitally integrated operational office managed by U&I staff" },
-    { name: "Manila (Philippines)", address: "Digitally integrated operational office managed by U&I staff" },
-  ] as { name: string; phone?: string; /** Several numbers, each labelled with its city. */ phones?: { number: string; area: string }[]; email?: string; address: string }[],
+    { name: "Melbourne", phone: "+61 3 9639 6148", email: "information@uandiedu.com", address: "Suite 202, Level 2, 517 Flinders Lane, Melbourne VIC 3000, Australia" },
+    { name: "Gold Coast", phone: "+61 421 000 060", email: "information@uandiedu.com", address: "Level 1, Southport Central Commercial Tower 2, 2106/5 Lawson St., Southport QLD 4215, Australia" },
+    { name: "Korea", phone: "+82 10 4008 5126", email: "information@uandiedu.com", cities: ["Seoul", "Busan"] },
+    { name: "Philippines", email: "information@uandiedu.com", cities: ["Davao", "Cebu", "Iloilo", "Manila"] },
+    { name: "Ulaanbaatar (Mongolia)", email: "information@uandiedu.com" },
+  ] as {
+    name: string;
+    phone?: string;
+    /** Several numbers, each labelled with its city. */
+    phones?: { number: string; area: string }[];
+    email?: string;
+    address?: string;
+    /** For a country card: the cities with a U&I office, shown in place of an address. */
+    cities?: string[];
+  }[],
 };
 
 // ---------------------------------------------------------------------------
@@ -742,7 +751,7 @@ export const offices = {
 // ---------------------------------------------------------------------------
 export const footer = {
   tagline: "Your trusted partner for Australian education & migration.",
-  trust: "Trusted by 5,000+ students worldwide",
+  trust: "Trusted by more than 30,000 students worldwide",
   links: [
     { label: "Why Attend", href: "#why-attend" },
     { label: "Schedule", href: "#dates" },
@@ -756,6 +765,8 @@ export const footer = {
       { number: "+66 99-921-5899", area: "Chiang Mai" },
     ],
     address: "Level 3, 110 Mary St., Brisbane QLD 4000, Australia",
+    /** Brisbane head office line(s), shown in the footer next to its address. */
+    officePhones: [{ number: "+61 7 3270 7999", area: "Brisbane" }],
   },
   copyright: "© 2026 U&I Global. All rights reserved.",
   privacyHref: "#",

@@ -44,6 +44,7 @@ const th: Record<string, string> = {
   "Open in Google Maps": "เปิดใน Google Maps",
   "Australia State Government Official Agent": "ตัวแทนอย่างเป็นทางการของรัฐบาลรัฐออสเตรเลีย",
   "Since 1997 · 29 Years Experience & Trust": "ตั้งแต่ปี 1997 · ประสบการณ์และความไว้วางใจกว่า 29 ปี",
+  "Years": "ปี",
   "Register early for exclusive expo-day benefits!": "ลงทะเบียนล่วงหน้า รับสิทธิพิเศษเฉพาะในงาน!",
   "FREE!": "ฟรี!",
   "Course application": "สมัครเรียน",
@@ -237,10 +238,18 @@ const th: Record<string, string> = {
   "Iloilo (Philippines)": "อิโลอิโล (ฟิลิปปินส์)",
   "Manila (Philippines)": "มะนิลา (ฟิลิปปินส์)",
   "Digitally integrated operational office managed by U&I staff": "สำนักงานดิจิทัลที่ดูแลโดยเจ้าหน้าที่ U&I",
+  "Korea": "เกาหลีใต้",
+  "Philippines": "ฟิลิปปินส์",
+  "Seoul": "โซล",
+  "Busan": "ปูซาน",
+  "Cebu": "เซบู",
+  "Iloilo": "อิโลอิโล",
+  "Manila": "มะนิลา",
+  "Ulaanbaatar (Mongolia)": "อูลานบาตอร์ (มองโกเลีย)",
 
   // Footer
   "Your trusted partner for Australian education & migration.": "ผู้เชี่ยวชาญด้านการเรียนต่อและการวางแผนเส้นทางในออสเตรเลีย ตั้งแต่ปี 1997",
-  "Trusted by 5,000+ students worldwide": "ได้รับความไว้วางใจจากนักเรียนกว่า 5,000 คนทั่วโลก",
+  "Trusted by more than 30,000 students worldwide": "ได้รับความไว้วางใจจากนักเรียนกว่า 30,000 คนทั่วโลก",
   "© 2026 U&I Global. All rights reserved.": "© 2026 U&I Global สงวนลิขสิทธิ์",
 
   // Interface labels

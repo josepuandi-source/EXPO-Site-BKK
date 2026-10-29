@@ -71,10 +71,18 @@ export function Offices() {
                       {o.email}
                     </a>
                   )}
-                  <p className="flex items-start gap-2.5">
-                    <PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" />
-                    {o.address}
-                  </p>
+                  {o.address && (
+                    <p className="flex items-start gap-2.5">
+                      <PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" />
+                      {o.address}
+                    </p>
+                  )}
+                  {o.cities && (
+                    <p className="flex items-start gap-2.5">
+                      <PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" />
+                      {o.cities.join(" · ")}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
@@ -122,7 +130,7 @@ export function Footer() {
                   <MailIcon className="h-4 w-4 shrink-0" />
                   {footer.contact.email}
                 </a>
-                {footer.contact.phones.map((p) => (
+                {footer.contact.officePhones.map((p) => (
                   <a key={p.number} href={tel(p.number)} className="flex items-center gap-2.5 hover:text-white hover:underline">
                     <PhoneIcon className="h-4 w-4 shrink-0" />
                     {p.number} ({p.area})

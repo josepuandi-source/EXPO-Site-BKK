@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useContent } from "./ContentProvider";
 import ExpoLogo from "./ExpoLogo";
-import { CalendarIcon, PinIcon } from "./icons";
+import { CalendarIcon, PinIcon, ShieldCheckIcon } from "./icons";
 import Clouds from "./Clouds";
 import WavingFlag from "./WavingFlag";
 
@@ -46,7 +46,31 @@ export default function Hero() {
         <Image src={`${ART}/skyline.jpg`} alt="" fill sizes="100vw" className="object-cover object-bottom" />
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-24 sm:px-6 md:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
+      {/* Official-agent trust badge, top right: a gold "29 years" seal beside the credentials */}
+      <motion.div
+        className="relative z-20 flex justify-end px-4 pt-4 sm:px-6 lg:absolute lg:right-8 lg:top-8 lg:p-0"
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+      >
+        <div className="flex max-w-[300px] items-center gap-3 rounded-2xl bg-white/95 p-2.5 pr-4 text-navy-900 shadow-[0_12px_30px_rgba(13,31,58,.28)] ring-1 ring-white backdrop-blur sm:max-w-[360px] lg:gap-4 lg:p-3 lg:pr-5">
+          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[conic-gradient(from_140deg,#F8E844,#C9A227,#F8E844,#E0B93A,#F8E844)] p-[3px] shadow-[0_4px_10px_rgba(201,162,39,.45)] lg:h-[72px] lg:w-[72px]">
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-primary-700 text-white ring-2 ring-white/70">
+              <span className="font-heading text-[22px] font-extrabold leading-none text-accent-500 lg:text-[28px]">{hero.trustSeal.number}</span>
+              <span className="mt-0.5 text-[10px] font-semibold uppercase leading-none tracking-wider lg:text-[11px]">{hero.trustSeal.label}</span>
+            </div>
+          </div>
+          <div className="min-w-0">
+            <p className="flex items-start gap-1.5 font-heading text-[13px] font-bold leading-snug text-primary-900 lg:text-[15px]">
+              <ShieldCheckIcon className="mt-px h-4 w-4 shrink-0 text-primary-700 lg:h-[18px] lg:w-[18px]" />
+              {hero.trust[0]}
+            </p>
+            <p className="mt-1 text-[11.5px] leading-snug text-neutral-600 lg:text-[13px]">{hero.trust[1]}</p>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-6 sm:px-6 md:pt-10 lg:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
         <motion.div
           className="flex flex-col items-center pb-6 text-center lg:items-start lg:pb-[clamp(140px,16vw,240px)] lg:text-left"
           initial={{ opacity: 0, y: 24 }}
@@ -54,6 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <ExpoLogo alt={hero.logo.alt} strap={hero.strap} className="w-[min(100%,440px)] md:w-[460px]" />
+          <p className="-mt-1 font-heading text-[clamp(32px,5vw,50px)] font-bold leading-none text-white drop-shadow-[0_2px_8px_rgba(0,40,80,.3)] lg:pl-[11%]">{hero.city}</p>
 
           <div className="mt-6 flex flex-col gap-2 drop-shadow-[0_2px_6px_rgba(0,40,80,.25)]">
             <p className="flex flex-wrap items-baseline justify-center gap-x-2.5 lg:justify-start">
@@ -113,13 +138,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Trust line along the bottom, over the skyline */}
-      <div className="relative z-10 bg-[linear-gradient(90deg,rgba(13,31,58,.82),rgba(13,31,58,.55)_60%,rgba(13,31,58,0))] text-white lg:absolute lg:bottom-0 lg:left-0 lg:w-[60%]">
-        <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6 lg:px-8 lg:text-left">
-          <p className="font-heading text-[15px] font-semibold leading-snug md:text-[17px]">{hero.trust[0]}</p>
-          <p className="text-[13px] leading-snug text-white/85 md:text-[15px]">{hero.trust[1]}</p>
-        </div>
-      </div>
     </section>
   );
 }
