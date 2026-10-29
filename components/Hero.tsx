@@ -46,31 +46,44 @@ export default function Hero() {
         <Image src={`${ART}/skyline.jpg`} alt="" fill sizes="100vw" className="object-cover object-bottom" />
       </div>
 
-      {/* Official-agent trust badge, top right: a gold "29 years" seal beside the credentials */}
+      {/* Official-agent award seal, top right. Hover (or tap/focus) and it opens into a card with the credentials. */}
       <motion.div
-        className="relative z-20 flex justify-end px-4 pt-4 sm:px-6 lg:absolute lg:right-8 lg:top-8 lg:p-0"
-        initial={{ opacity: 0, y: -12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        className="absolute right-3 top-3 z-20 sm:right-6 sm:top-5 lg:right-8 lg:top-7"
+        initial={{ opacity: 0, scale: 0.6, rotate: -20 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.5 }}
       >
-        <div className="flex max-w-[300px] items-center gap-3 rounded-2xl bg-white/95 p-2.5 pr-4 text-navy-900 shadow-[0_12px_30px_rgba(13,31,58,.28)] ring-1 ring-white backdrop-blur sm:max-w-[360px] lg:gap-4 lg:p-3 lg:pr-5">
-          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[conic-gradient(from_140deg,#F8E844,#C9A227,#F8E844,#E0B93A,#F8E844)] p-[3px] shadow-[0_4px_10px_rgba(201,162,39,.45)] lg:h-[72px] lg:w-[72px]">
-            <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-primary-700 text-white ring-2 ring-white/70">
-              <span className="font-heading text-[22px] font-extrabold leading-none text-accent-500 lg:text-[28px]">{hero.trustSeal.number}</span>
-              <span className="mt-0.5 text-[10px] font-semibold uppercase leading-none tracking-wider lg:text-[11px]">{hero.trustSeal.label}</span>
-            </div>
-          </div>
-          <div className="min-w-0">
-            <p className="flex items-start gap-1.5 font-heading text-[13px] font-bold leading-snug text-primary-900 lg:text-[15px]">
-              <ShieldCheckIcon className="mt-px h-4 w-4 shrink-0 text-primary-700 lg:h-[18px] lg:w-[18px]" />
+        <div className="group relative">
+          {/* Credentials card: grows out from behind the seal, leaving room for it in the corner */}
+          <div
+            role="tooltip"
+            id="trust-card"
+            className="pointer-events-none absolute right-0 top-0 w-[min(330px,calc(100vw-1.5rem))] origin-top-right scale-50 rounded-2xl bg-white/95 py-4 pl-4 pr-[96px] text-navy-900 opacity-0 shadow-[0_16px_40px_rgba(13,31,58,.3)] ring-1 ring-[#E0B93A]/60 backdrop-blur transition-all duration-300 ease-out group-focus-within:pointer-events-auto group-focus-within:scale-100 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100 lg:w-[380px] lg:py-5 lg:pl-5 lg:pr-[112px]"
+          >
+            <p className="flex items-start gap-1.5 font-heading text-[14px] font-bold leading-snug text-primary-900 lg:text-[16px]">
+              <ShieldCheckIcon className="mt-0.5 h-[18px] w-[18px] shrink-0 text-primary-700" />
               {hero.trust[0]}
             </p>
-            <p className="mt-1 text-[11.5px] leading-snug text-neutral-600 lg:text-[13px]">{hero.trust[1]}</p>
+            <p className="mt-1.5 text-[12.5px] leading-snug text-neutral-600 lg:text-[14px]">{hero.trust[1]}</p>
           </div>
+
+          {/* The gold award seal */}
+          <button
+            type="button"
+            aria-label={hero.trust[0]}
+            aria-describedby="trust-card"
+            className="relative grid h-[78px] w-[78px] place-items-center rounded-full drop-shadow-[0_6px_12px_rgba(120,85,10,.45)] transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6 focus-visible:outline-none lg:h-[96px] lg:w-[96px]"
+          >
+            <Image src={`${ART}/seal.webp`} alt="" fill sizes="96px" className="object-contain" />
+            <span className="relative flex flex-col items-center leading-none text-[#6B4A0C] [text-shadow:0_1px_0_rgba(255,255,255,.55)]">
+              <span className="font-heading text-[26px] font-extrabold lg:text-[32px]">{hero.trustSeal.number}</span>
+              <span className="mt-0.5 text-[13px] font-bold uppercase tracking-wider lg:text-[15px]">{hero.trustSeal.label}</span>
+            </span>
+          </button>
         </div>
       </motion.div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-6 sm:px-6 md:pt-10 lg:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-24 sm:px-6 md:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
         <motion.div
           className="flex flex-col items-center pb-6 text-center lg:items-start lg:pb-[clamp(140px,16vw,240px)] lg:text-left"
           initial={{ opacity: 0, y: 24 }}
