@@ -32,16 +32,17 @@ export default function Specials() {
             const [w, h] = ICON_SIZE[it.icon];
             return (
               <Reveal key={it.icon} delay={i * 0.06}>
-                <div className="relative h-full">
+                {/* Lifts slightly on hover, with the icon popping up a touch */}
+                <div className="group relative h-full transition-transform duration-300 ease-out hover:-translate-y-1.5">
                   {/* Green tab behind the card's top edge */}
                   <div aria-hidden="true" className="absolute -top-2 inset-x-0 h-12 rounded-t-[20px] bg-primary-700 sm:-top-2.5 sm:rounded-t-[26px]" />
-                  <div className="relative flex h-full min-h-[128px] flex-col items-center justify-center rounded-[20px] bg-white px-2.5 pb-4 pt-10 text-center sm:min-h-[170px] sm:rounded-[26px] sm:px-6 sm:pb-6 sm:pt-14 shadow-[0_10px_24px_rgba(13,31,58,.14)]">
+                  <div className="relative flex h-full min-h-[128px] flex-col items-center justify-center rounded-[20px] bg-white px-2.5 pb-4 pt-10 text-center sm:min-h-[170px] sm:rounded-[26px] sm:px-6 sm:pb-6 sm:pt-14 shadow-[0_10px_24px_rgba(13,31,58,.14)] transition-shadow duration-300 group-hover:shadow-[0_18px_36px_rgba(13,31,58,.22)]">
                     <Image
                       src={`/images/bkk/icon-${it.icon}.webp`}
                       alt=""
                       width={w}
                       height={h}
-                      className="absolute left-1/2 -top-9 h-[64px] w-auto sm:-top-12 sm:h-[92px] -translate-x-1/2 drop-shadow-[0_6px_10px_rgba(13,31,58,.25)]"
+                      className="absolute left-1/2 -top-9 h-[64px] w-auto sm:-top-12 sm:h-[92px] -translate-x-1/2 drop-shadow-[0_6px_10px_rgba(13,31,58,.25)] transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:scale-105"
                     />
                     <p className="font-heading text-[14.5px] font-normal leading-snug text-navy-900 sm:text-[21px]">
                       {it.text}
