@@ -42,7 +42,7 @@ const th: Record<string, string> = {
   "1:00–5:00 PM": "เวลา 13.00–17.00 น.",
   "392/44 Siam Square Soi 6, Pathum Wan, Bangkok 10330": "392/44 สยามสแควร์ ซอย 6 ปทุมวัน กรุงเทพฯ 10330",
   "Open in Google Maps": "เปิดใน Google Maps",
-  "Australia State Government Official Agent": "ตัวแทนอย่างเป็นทางการของรัฐบาลรัฐออสเตรเลีย",
+  "Australia State Government Official Agent": "ตัวแทนด้านการศึกษาที่ได้รับการรับรองอย่างเป็นทางการจากรัฐบาลรัฐออสเตรเลีย",
   "Since 1997 · 29 Years Experience & Trust": "ตั้งแต่ปี 1997 · ประสบการณ์และความไว้วางใจกว่า 29 ปี",
   "Years": "ปี",
   "Register early for exclusive expo-day benefits!": "ลงทะเบียนล่วงหน้า รับสิทธิพิเศษเฉพาะในงาน!",

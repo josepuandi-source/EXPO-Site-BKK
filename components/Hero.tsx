@@ -50,7 +50,7 @@ export default function Hero() {
       {/* Official-agent award, top right */}
       <AwardSeal trust={hero.trust} seal={hero.trustSeal} titleClassName="text-primary-900" iconClassName="text-primary-700" sealSrc={`${ART}/seal.webp`} />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-24 sm:px-6 md:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-32 sm:px-6 md:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
         <motion.div
           className="flex flex-col items-center pb-6 text-center lg:items-start lg:pb-[clamp(140px,16vw,240px)] lg:text-left"
           initial={{ opacity: 0, y: 24 }}
