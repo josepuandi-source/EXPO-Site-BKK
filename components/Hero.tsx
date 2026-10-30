@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useContent } from "./ContentProvider";
 import ExpoLogo from "./ExpoLogo";
-import { CalendarIcon, PinIcon, ShieldCheckIcon } from "./icons";
+import { CalendarIcon, PinIcon } from "./icons";
+import AwardSeal from "./AwardSeal";
 import Clouds from "./Clouds";
 import WavingFlag from "./WavingFlag";
 
@@ -27,20 +27,6 @@ const skylineMask = {
 export default function Hero() {
   const { hero } = useContent();
   const d = hero.details;
-  const [trustOpen, setTrustOpen] = useState(false);
-  // Unroll the award banner on its own once the seal has popped in.
-  useEffect(() => {
-    const t = window.setTimeout(() => setTrustOpen(true), 1400);
-    return () => window.clearTimeout(t);
-  }, []);
-  // Roll the award banner back up as soon as the page is scrolled.
-  useEffect(() => {
-    if (!trustOpen) return;
-    const start = window.scrollY;
-    const onScroll = () => Math.abs(window.scrollY - start) > 8 && setTrustOpen(false);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [trustOpen]);
   return (
     <section id="hero" className="relative overflow-hidden bg-sky text-white">
       {/* Clouds */}
@@ -61,51 +47,8 @@ export default function Hero() {
         <Image src={`${ART}/skyline.jpg`} alt="" fill sizes="100vw" className="object-cover object-bottom" />
       </div>
 
-      {/* Official-agent award, top right: just the gold seal until hovered or tapped, then a banner
-          unrolls out of its right side (per JM's sketch). Scrolling the page rolls it back up. */}
-      <motion.div
-        className="absolute right-5 top-3 z-20 sm:right-10 sm:top-5 lg:right-14 lg:top-7"
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: "spring", stiffness: 160, damping: 14, delay: 0.5 }}
-      >
-        <div className="flex items-center" onMouseEnter={() => setTrustOpen(true)} onMouseLeave={() => setTrustOpen(false)}>
-          {/* The gold award seal */}
-          <button
-            type="button"
-            aria-expanded={trustOpen}
-            aria-controls="trust-banner"
-            aria-label={hero.trust[0]}
-            onClick={() => setTrustOpen((o) => !o)}
-            className={`relative z-10 grid h-[84px] w-[84px] shrink-0 place-items-center drop-shadow-[0_6px_12px_rgba(120,85,10,.45)] transition-transform duration-300 focus-visible:outline-none lg:h-[112px] lg:w-[112px] ${
-              trustOpen ? "-rotate-6 scale-105" : ""
-            }`}
-          >
-            <Image src={`${ART}/seal.webp`} alt="" fill sizes="112px" className="object-contain" />
-            <span className="relative flex flex-col items-center leading-none text-[#6B4A0C] [text-shadow:0_1px_0_rgba(255,255,255,.55)]">
-              <span className="font-heading text-[28px] font-extrabold lg:text-[38px]">{hero.trustSeal.number}</span>
-              <span className="mt-0.5 text-[14px] font-bold uppercase tracking-wider lg:text-[18px]">{hero.trustSeal.label}</span>
-            </span>
-          </button>
-
-          {/* Banner tucked behind the seal */}
-          <motion.div
-            id="trust-banner"
-            className="-ml-6 overflow-hidden lg:-ml-8"
-            initial={false}
-            animate={{ width: trustOpen ? "auto" : 0, opacity: trustOpen ? 1 : 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
-            <div className="w-[min(290px,calc(100vw-6rem))] rounded-r-2xl border-y-2 border-r-2 border-[#E0B93A] bg-white/95 py-2.5 pl-8 pr-4 text-navy-900 shadow-[0_12px_28px_rgba(13,31,58,.28)] lg:w-[340px] lg:py-3.5 lg:pl-11 lg:pr-5">
-              <p className="flex items-start gap-1.5 font-heading text-[13px] font-bold leading-snug text-primary-900 lg:text-[16px]">
-                <ShieldCheckIcon className="mt-px h-4 w-4 shrink-0 text-primary-700 lg:h-[18px] lg:w-[18px]" />
-                {hero.trust[0]}
-              </p>
-              <p className="mt-1 text-[11.5px] leading-snug text-neutral-600 lg:text-[13.5px]">{hero.trust[1]}</p>
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
+      {/* Official-agent award, top right */}
+      <AwardSeal trust={hero.trust} seal={hero.trustSeal} titleClassName="text-primary-900" iconClassName="text-primary-700" sealSrc={`${ART}/seal.webp`} />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-end gap-2 px-4 pt-24 sm:px-6 md:pt-28 lg:grid-cols-[1.15fr_1fr] lg:px-8">
         <motion.div
