@@ -307,6 +307,11 @@ export const specialists = {
   subtitle: "Meet the U&I team who will look after you at the Bangkok EXPO.",
   /** Shown on each card as the call to book through LINE. */
   bookLabel: "Book via LINE",
+  /** Desktop layout: cards per row, and start a new row after these cards (0-based). */
+  perRow: 4 as 3 | 4,
+  breakAfter: [3] as number[],
+  /** Shown on a card that has no photo yet. */
+  photoSoon: "Photo coming soon" as string | undefined,
   /**
    * line: the branch LINE account the card opens.
    * background: optional photo of their city, shown soft and blurred behind the cut-out.
@@ -368,7 +373,7 @@ export const specialists = {
       branch: "Brisbane & Gold Coast office",
       points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],
     },
-  ] as { name: string; photo: string; line: string; branch: string; points: string[]; background?: string }[],
+  ] as { name: string; photo?: string; line?: string; branch: string; points: string[]; background?: string }[],
 };
 
 // ---------------------------------------------------------------------------
