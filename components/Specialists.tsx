@@ -5,12 +5,31 @@ import { useContent } from "./ContentProvider";
 import { Container, Reveal, SectionHeader } from "./ui";
 import { CheckIcon } from "./icons";
 
+// Booking button look per channel: LINE (Thailand) or Facebook (Philippines)
+const BOOK = {
+  line: {
+    text: "text-[#06C755]",
+    badge: <span className="grid h-6 w-6 place-items-center rounded-full bg-[#06C755] text-[9px] font-extrabold tracking-tight text-white">LINE</span>,
+  },
+  facebook: {
+    text: "text-[#1877F2]",
+    badge: (
+      <span className="grid h-6 w-6 place-items-center rounded-full bg-[#1877F2] text-white">
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5 fill-current">
+          <path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z" />
+        </svg>
+      </span>
+    ),
+  },
+} as const;
+
 // Card width per row on desktop (Tailwind needs the classes written out in full)
 const LG_WIDTH = { 3: "lg:w-[calc((100%-40px)/3)]", 4: "lg:w-[calc((100%-60px)/4)]" } as const;
 
 /**
  * The U&I specialists at the EXPO: cut-out photo on a poster-style sky (or a soft photo of their city),
- * name tab and three check points. Cards with a branch LINE account open it to book a consultation.
+ * name tab and three check points. Cards with a `link` (branch LINE or the specialist's Facebook,
+ * per `bookVia`) open it to book a consultation; `bookingSoon` shows the button greyed out for now.
  * On phones each card lies on its side (photo left, details right) to keep the list short.
  * `perRow` sets the desktop row length; `breakAfter` starts a new row after those cards
  * (e.g. local staff on top, Australia below). A card without a `photo` shows a "coming soon" silhouette.
@@ -19,20 +38,21 @@ export default function Specialists() {
   const { specialists } = useContent();
   const perRow = specialists.perRow ?? 4;
   const breakAfter = specialists.breakAfter ?? [];
+  const book = BOOK[specialists.bookVia ?? "line"];
   return (
     <section id="specialists" className="bg-[linear-gradient(180deg,#F5FBFF_0%,#E1F3EC_100%)] py-20 md:py-[88px]">
       <Container>
         <SectionHeader title={specialists.title} subtitle={specialists.subtitle} />
         <div className="flex flex-wrap justify-center gap-4 sm:gap-7 lg:gap-5">
           {specialists.items.map((s, i) => {
-            // Cards with a branch LINE account open it to book; the rest are plain cards
-            const Card = s.line ? "a" : "article";
+            // Cards with a booking link open it; the rest are plain cards
+            const Card = s.link ? "a" : "article";
             return [
               <Reveal key={s.name} delay={(i % perRow) * 0.06} className={`w-full sm:w-[calc(50%-14px)] ${LG_WIDTH[perRow]}`}>
                 <Card
-                  {...(s.line ? { href: s.line, target: "_blank", rel: "noopener noreferrer", "aria-label": `${s.name} – ${specialists.bookLabel}` } : {})}
+                  {...(s.link ? { href: s.link, target: "_blank", rel: "noopener noreferrer", "aria-label": `${s.name} – ${specialists.bookLabel}` } : {})}
                   className={`group flex h-full overflow-hidden rounded-[22px] bg-white shadow-[0_10px_24px_rgba(13,31,58,.12)] sm:flex-col sm:rounded-[26px] ${
-                    s.line ? "transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(13,31,58,.2)] focus-visible:-translate-y-1" : ""
+                    s.link ? "transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(13,31,58,.2)] focus-visible:-translate-y-1" : ""
                   }`}
                 >
                   <div className="relative min-h-[180px] w-[38%] shrink-0 overflow-hidden bg-sky sm:h-[300px] sm:w-auto lg:h-[260px]">
@@ -80,12 +100,20 @@ export default function Specialists() {
                         </li>
                       ))}
                     </ul>
-                    {s.line && (
-                      <span className="mt-auto inline-flex items-center gap-2 self-start pt-4 font-heading text-[13px] font-bold text-[#06C755] sm:self-center sm:pt-5 sm:text-[15px]">
-                        <span className="grid h-6 w-6 place-items-center rounded-full bg-[#06C755] text-[9px] font-extrabold tracking-tight text-white">LINE</span>
+                    {s.link ? (
+                      <span className={`mt-auto inline-flex items-center gap-2 self-start pt-4 font-heading text-[13px] font-bold sm:self-center sm:pt-5 sm:text-[15px] ${book.text}`}>
+                        {book.badge}
                         {specialists.bookLabel}
                         <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
                       </span>
+                    ) : (
+                      s.bookingSoon && (
+                        // Link not ready yet: same button, greyed out
+                        <span className="mt-auto inline-flex items-center gap-2 self-start pt-4 font-heading text-[13px] font-bold text-neutral-400 opacity-80 grayscale sm:self-center sm:pt-5 sm:text-[15px]">
+                          {book.badge}
+                          {specialists.bookingSoonLabel ?? specialists.bookLabel}
+                        </span>
+                      )
                     )}
                   </div>
                 </Card>

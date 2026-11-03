@@ -307,13 +307,16 @@ export const specialists = {
   subtitle: "Meet the U&I team who will look after you at the Bangkok EXPO.",
   /** Shown on each card as the call to book through LINE. */
   bookLabel: "Book via LINE",
+  /** Which booking button the cards show: "line" or "facebook". */
+  bookVia: "line" as "line" | "facebook",
+  bookingSoonLabel: undefined as string | undefined,
   /** Desktop layout: cards per row, and start a new row after these cards (0-based). */
   perRow: 4 as 3 | 4,
   breakAfter: [3] as number[],
   /** Shown on a card that has no photo yet. */
   photoSoon: "Photo coming soon" as string | undefined,
   /**
-   * line: the branch LINE account the card opens.
+   * link: the branch LINE account the card opens.
    * background: optional photo of their city, shown soft and blurred behind the cut-out.
    */
   items: [
@@ -321,7 +324,7 @@ export const specialists = {
       name: "P'Aew",
       photo: "/images/specialists/aew-tee.webp",
       background: "/images/specialists/bg/bangkok-soft.webp",
-      line: line.bangkok,
+      link: line.bangkok,
       branch: "Consultant, Bangkok office",
       points: ["Specialist in English-language study plans", "ILSC and Greystone alumna", "Check, be sure, then lodge your visa"],
     },
@@ -329,7 +332,7 @@ export const specialists = {
       name: "P'Fern",
       photo: "/images/specialists/fern-tee.webp",
       background: "/images/specialists/bg/bangkok-soft.webp",
-      line: line.bangkok,
+      link: line.bangkok,
       branch: "Consultant, Bangkok office",
       points: ["English study plans in Australia", "ILSC and Greenwich alumna", "Not sure how to find work or a place to live? Ask away!"],
     },
@@ -337,7 +340,7 @@ export const specialists = {
       name: "P'Mookie",
       photo: "/images/specialists/mookie-tee.webp",
       background: "/images/specialists/bg/bangkok-soft.webp",
-      line: line.bangkok,
+      link: line.bangkok,
       branch: "Counsellor, Bangkok office",
       points: ["Visa plans: Work & Holiday, work and visa extensions", "Degree study with scholarships of over 100%", "Summer courses in the school break, made easy"],
     },
@@ -345,7 +348,7 @@ export const specialists = {
       name: "P'Blue",
       photo: "/images/specialists/blue-tee.webp",
       background: "/images/specialists/bg/chiangmai-soft.webp",
-      line: line.bangkok,
+      link: line.bangkok,
       branch: "Consultant, Chiang Mai office",
       points: ["Over 7 years of student counselling", "Study plans for Australia & New Zealand", "Full support from application to visa"],
     },
@@ -353,7 +356,7 @@ export const specialists = {
       name: "P'Inez",
       photo: "/images/specialists/inez.webp",
       background: "/images/specialists/bg/melbourne-soft.webp",
-      line: line.melbourne,
+      link: line.melbourne,
       branch: "Melbourne office",
       points: ["Degree study plans", "Experienced with 485 visa applications", "RMIT alumna, a top 3 Melbourne university"],
     },
@@ -361,7 +364,7 @@ export const specialists = {
       name: "P'Titi",
       photo: "/images/specialists/titi.webp",
       background: "/images/specialists/bg/goldcoast-soft.webp",
-      line: line.brisbane,
+      link: line.brisbane,
       branch: "Brisbane & Gold Coast office",
       points: ["Knows vocational and degree pathways", "Specialist in studying in Australia", "Free help planning your study and visa"],
     },
@@ -369,11 +372,11 @@ export const specialists = {
       name: "P'Irene",
       photo: "/images/specialists/irene-full.webp",
       background: "/images/specialists/bg/brisbane-soft.webp",
-      line: line.brisbane,
+      link: line.brisbane,
       branch: "Brisbane & Gold Coast office",
       points: ["Experienced in switching from Work and Holiday to a student visa", "Courses Work and Holiday visa holders can take", "Free advice and planning, no service fees at any step"],
     },
-  ] as { name: string; photo?: string; line?: string; branch: string; points: string[]; background?: string }[],
+  ] as { name: string; photo?: string; link?: string; bookingSoon?: boolean; branch: string; points: string[]; background?: string }[],
 };
 
 // ---------------------------------------------------------------------------
