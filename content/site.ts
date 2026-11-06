@@ -814,7 +814,7 @@ export const tel = (p: string) => "tel:" + p.replace(/[^+\d]/g, "");
 // ---------------------------------------------------------------------------
 export const sisterSites = [
   { flag: "au", label: "English", title: "EXPO 2026 main website (English, under construction)", href: "https://expo26-site-2.vercel.app/under-construction", lang: "en" },
-  { flag: "ph", label: "Davao", title: "EXPO 2026 Davao (coming soon)", href: "/davao", lang: "en" },
+  { flag: "ph", label: "Davao", title: "EXPO 2026 Davao", href: "https://expo26-davao.uandiedu.com", lang: "en" },
 ] as { flag: "th" | "ph" | "au"; label: string; title: string; href: string; lang: string }[];
 
 // ---------------------------------------------------------------------------
