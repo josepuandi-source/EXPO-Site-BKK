@@ -103,7 +103,8 @@ export function PosterViewer({ children }: { children: ReactNode }) {
               alt={poster.alt}
               width={poster.width ?? 1415}
               height={poster.height ?? 2000}
-              sizes="(min-width: 768px) 640px, 100vw"
+              // The original file (posters are ~200 KB), so it opens at full size and full sharpness.
+              unoptimized
               onClick={(e) => e.stopPropagation()}
               className="h-auto max-h-full w-auto max-w-full rounded-lg object-contain shadow-2xl"
             />
